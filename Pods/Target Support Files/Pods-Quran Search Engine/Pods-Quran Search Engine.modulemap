@@ -1,0 +1,6 @@
+framework module Pods_Quran_Search_Engine {
+  umbrella header "Pods-Quran Search Engine-umbrella.h"
+
+  export *
+  module * { export * }
+}

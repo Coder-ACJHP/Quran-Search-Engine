@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="oei-pY-REm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-hR-Ked">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="FSa-32-gcq"/>
+                                    <constraint firstAttribute="height" constant="812" id="uNN-0i-kXr"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محرك البحث القرآني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDQ-JY-Zjx">
+                                <rect key="frame" x="16" y="415" width="343" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="xAI-VL-HuF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="29"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="LJl-kr-Bgu">
+                                <rect key="frame" x="120" y="256" width="135" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="HTO-ak-JhY"/>
+                                    <constraint firstAttribute="width" constant="135" id="pSa-ft-sn5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 Coder ACJHP All Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-oo-q3n">
+                                <rect key="frame" x="16" y="757" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dcr-9v-vDE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="11"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oei-pY-REm" secondAttribute="trailing" id="ARr-fo-l8h"/>
+                            <constraint firstItem="lYj-hR-Ked" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BbX-ox-liJ"/>
+                            <constraint firstItem="LJl-kr-Bgu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="212" id="Cqo-jA-NBs"/>
+                            <constraint firstItem="rDb-oo-q3n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IWW-3J-hMp"/>
+                            <constraint firstAttribute="bottom" secondItem="oei-pY-REm" secondAttribute="bottom" id="KTX-GR-Mm4"/>
+                            <constraint firstItem="lYj-hR-Ked" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MiL-e8-euh"/>
+                            <constraint firstItem="oei-pY-REm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Q2j-3g-1aA"/>
+                            <constraint firstItem="oei-pY-REm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Tj5-xR-ZgS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qDQ-JY-Zjx" secondAttribute="trailing" constant="16" id="U3Y-EB-PR1"/>
+                            <constraint firstItem="qDQ-JY-Zjx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WtL-Q9-BFC"/>
+                            <constraint firstItem="lYj-hR-Ked" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZkE-g5-7Sx"/>
+                            <constraint firstAttribute="bottom" secondItem="lYj-hR-Ked" secondAttribute="bottom" id="avy-jM-fOk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rDb-oo-q3n" secondAttribute="trailing" constant="16" id="iDj-OG-hS3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qDQ-JY-Zjx" secondAttribute="bottom" constant="317" id="itw-JX-BxP"/>
+                            <constraint firstItem="LJl-kr-Bgu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="kTt-xo-0dW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LJl-kr-Bgu" secondAttribute="trailing" constant="120" id="nov-Cu-irc"/>
+                            <constraint firstItem="rDb-oo-q3n" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wI1-vX-4Os"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="about" width="512" height="512"/>
+        <image name="background" width="1125" height="2436"/>
+    </resources>
+</document>
