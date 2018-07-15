@@ -161,7 +161,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if tableView == self.resultTable {
-            data.findByWordWithIndex(query: searchQuery) { (searchObj) in
+            data.findByWordWithIndex(query: searchQuery, selectedIndex: indexPath.row) { (searchObj) in
                 self.searchObject = searchObj
                 self.performSegue(withIdentifier: "toDetailView", sender: self)
             }

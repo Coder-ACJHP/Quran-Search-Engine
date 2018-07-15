@@ -12,6 +12,8 @@ import UIKit
 
 class ServiceData {
     
+    let specialCharacters = "| 1234567890"
+    let arabicAlphabet = "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ء ة ئ ى إ"
     typealias SEARCH_RESULT_DATA = ([String]) -> ()
     typealias SEARCH_RESULT_DATA_WITH_INDEX = (SearchResultObj) -> ()
     
@@ -24,14 +26,37 @@ class ServiceData {
         filePath = Bundle.main.path(forResource: "Quran", ofType: "txt")!
     }
     
-    func findByWordWithIndex(query: String, completionHandler: SEARCH_RESULT_DATA_WITH_INDEX) {
+    func findByWordWithIndex(query: String, selectedIndex: Int, completionHandler: SEARCH_RESULT_DATA_WITH_INDEX) {
         let resultList = SearchResultObj()
         let reader = FileReader(path: filePath)
         
+        var counter = 0
         for singleLine in reader! {
-            // Add your logic here
+            if singleLine.contains(query) {
+                
+                if counter == selectedIndex {
+                    // First remove all text from line
+                    let verseAndSurahNumber = removeTextFromString(text: singleLine)
+                    // Split numbers to get verse & surah numbers
+                    let numbersArray = verseAndSurahNumber.split(separator: "|")
+                    // First element is verse number
+                    let numberOne = String(numbersArray[0])
+                    resultList.surahNumber = Int(numberOne)
+                    // Second is surah number
+                    let numberTwo = numbersArray[1]
+                    resultList.ayahNumber = Int(numberTwo)
+                    
+                    
+                }
+                counter = counter + 1
+            }
         }
         completionHandler(resultList)
+        print("[")
+        for index in 1...114 {
+            print("\"\(index)\":\"\",")
+        }
+        print("]")
     }
     
     func findByWord(query: String, completionHandler: SEARCH_RESULT_DATA) {
@@ -49,7 +74,12 @@ class ServiceData {
     }
     
     func removeSpecialCharsFromString(text: String) -> String {
-        let okayChars = Set("ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ء ة ئ ى إ")
+        let okayChars = Set(arabicAlphabet)
         return text.filter {okayChars.contains($0) }
+    }
+    
+    func removeTextFromString(text: String) -> String {
+        let acceptedChars = Set(specialCharacters)
+        return text.filter {acceptedChars.contains($0)}
     }
 }

@@ -308,6 +308,12 @@
                                 <action selector="closePressed:" destination="wsE-Sg-oDo" id="AKs-iD-Wqx"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="dot-menu" id="yQ7-QI-SDW">
+                            <color key="tintColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="sheetMenu:" destination="wsE-Sg-oDo" id="BtS-Xp-mwU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ayahNumberLabel" destination="31J-j7-QVT" id="Xgh-Yv-1Lo"/>
@@ -342,6 +348,7 @@
     <resources>
         <image name="about" width="512" height="512"/>
         <image name="background" width="1125" height="2436"/>
+        <image name="dot-menu" width="30" height="30"/>
         <image name="hamburger-menu" width="30" height="30"/>
         <image name="sideMenuBackground" width="240" height="690"/>
     </resources>
