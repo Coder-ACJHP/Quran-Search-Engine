@@ -11,27 +11,40 @@ import UIKit
 class DetailController: UIViewController {
 
     
-    var searchObj: SearchResultObj?
+    var ayahNumber: Int?
+    var surahNumber: Int?
+    let service = ServiceData.shared
     @IBOutlet weak var ayahNumberLabel: UILabel!
-    @IBOutlet weak var ayahtextLabel: UILabel!
+    @IBOutlet weak var ayahtextLabel: UITextView!
     @IBOutlet weak var surahNumberlabel: UILabel!
     @IBOutlet weak var surahNameLabel: UILabel!
-   
+    @IBOutlet weak var landingPlaceLabel: UILabel!
+    @IBOutlet weak var juzNumberLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
-    }
-
+     }
 
     fileprivate func loadData() {
+            
+        service.findOthmaniAyahTextById(ayahNumber: self.ayahNumber!, surahNumber: self.surahNumber!) { (resultObj) in
+            
+        print(resultObj)
         
-        if searchObj != nil {
-            self.ayahtextLabel.text = searchObj?.ayahText
-            self.ayahNumberLabel.text = String(describing: searchObj?.ayahNumber)
-            self.surahNameLabel.text = searchObj?.surahName
-            self.surahNumberlabel.text = String(describing: searchObj?.surahNumber)
+            self.ayahNumberLabel.text = String(resultObj.ayahNumber).replaceEnglishDigitsWithArabic
+            self.ayahtextLabel.text = resultObj.ayahText
+            self.surahNameLabel.text = resultObj.surahName
+            self.surahNumberlabel.text = String(resultObj.surahNumber).replaceEnglishDigitsWithArabic
+            self.juzNumberLabel.text = String(resultObj.juz).replaceEnglishDigitsWithArabic
+            if resultObj.revelationType == "Medinan" {
+                self.landingPlaceLabel.text = "مدينة"
+            } else {
+                self.landingPlaceLabel.text = "مكة"
+            }
+            
         }
     }
     

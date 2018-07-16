@@ -10,21 +10,25 @@ import Foundation
 
 class SearchResultObj {
     
-    var surahName: String?
-    var surahNumber: Int?
-    var ayahNumber: Int?
-    var ayahText: String?
+    var juz: Int = 0
+    var revelationType: String = ""
+    var surahName: String = ""
+    var surahNumber: Int = 0
+    var ayahNumber: Int = 0
+    var ayahText: String = ""
     
     init() {}
     
-    init?(suraNum: Int, suraName: String, ayaNumber: Int, ayaText: String) {
+    init?(juz: Int, suraNum: Int, suraName: String, revType: String, ayaNumber: Int, ayaText: String) {
         self.surahName = suraName
         self.surahNumber = suraNum
         self.ayahNumber = ayaNumber
         self.ayahText = ayaText
+        self.juz = juz
+        self.revelationType = revType
     }
     
     func toString() {
-        print("Surah number : \(String(describing: self.surahNumber)), Surah name : \(String(describing: self.surahName)), Ayah number : \(String(describing: self.ayahNumber)), ayah text : \(String(describing: self.ayahText))")
+        print("Juz number : \(self.juz), Revulation type : \(self.revelationType), Surah number : \(self.surahNumber), Surah name : \(self.surahName), Ayah number : \(self.ayahNumber), ayah text : \(self.ayahText)")
     }
 }

@@ -111,10 +111,14 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "DetailViewController" {
+
+        if segue.identifier == "toDetailView" {
             let destinationViewController = segue.destination as? DetailController
-            destinationViewController?.searchObj = self.searchObject
+            
+            if self.searchObject.ayahNumber != 0 && self.searchObject.surahNumber != 0 {
+                destinationViewController?.ayahNumber = self.searchObject.ayahNumber
+                destinationViewController?.surahNumber = self.searchObject.surahNumber
+            }
         }
     }
     
@@ -163,7 +167,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         if tableView == self.resultTable {
             data.findByWordWithIndex(query: searchQuery, selectedIndex: indexPath.row) { (searchObj) in
                 self.searchObject = searchObj
+                // Perform seguae
                 self.performSegue(withIdentifier: "toDetailView", sender: self)
+            }
+        } else if tableView == self.sideMenuTableView {
+            let index = indexPath.item
+            switch index {
+            case 0:
+                
+                break
+            case 1:
+                
+                break
+            case 2:
+                performSegue(withIdentifier: "toFeedbackPage", sender: self)
+                break
+            case 3:
+                performSegue(withIdentifier: "toAboutPage", sender: self)
+                break
+            default:
+                print("Table cannot include more than 4 rows!")
             }
         }
     }
