@@ -15,6 +15,7 @@ class ServiceData {
     let data = DataSource.shared
     let specialCharacters = "|1234567890"
     let arabicAlphabet = "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ء ة ئ ى إ"
+    typealias FETCH_RESULT_DATA = (String) -> ()
     typealias SEARCH_RESULT_DATA = ([String]) -> ()
     typealias SEARCH_RESULT_DATA_WITH_INDEX = (SearchResultObj) -> ()
     
@@ -115,6 +116,42 @@ class ServiceData {
                     print(error.localizedDescription)
                 }
                 
+            }
+        }
+        task.resume()
+    }
+    
+    func fetchSurahById(surahId: Int, completionHandler: @escaping FETCH_RESULT_DATA) {
+        
+        var surahAyahs = String()
+        let apiUrl = URL(string: "http://api.alquran.cloud/surah/" + String(surahId))
+        let session = URLSession.shared
+        let task = session.dataTask(with: apiUrl!) { (data, response, error) in
+            if error != nil {
+                self.showConnectionError()
+            } else {
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, AnyObject>
+                    DispatchQueue.main.async {
+                        var counter = 0
+                        let mainData = result["data"]
+                        let ayahArray = mainData!["ayahs"] as! [Dictionary<String, AnyObject>]
+                        ayahArray.forEach({ (result) in
+                            result.forEach({ (key, value) in
+                                if key == "text" {
+                                    if let text = value as? String {
+                                        let arabicNumber = String(counter).replaceEnglishDigitsWithArabic
+                                        surahAyahs += text + " ⎰\(arabicNumber)⎱ "
+                                    }
+                                    counter = counter + 1
+                                }
+                            })
+                        })
+                        completionHandler(surahAyahs)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
         }
         task.resume()

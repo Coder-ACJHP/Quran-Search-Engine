@@ -174,7 +174,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
             let index = indexPath.item
             switch index {
             case 0:
-                
+                performSegue(withIdentifier: "toQuranComplete", sender: self)
                 break
             case 1:
                 
