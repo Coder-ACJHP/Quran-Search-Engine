@@ -177,12 +177,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 performSegue(withIdentifier: "toQuranComplete", sender: self)
                 break
             case 1:
-                
-                break
-            case 2:
                 performSegue(withIdentifier: "toFeedbackPage", sender: self)
                 break
-            case 3:
+            case 2:
                 performSegue(withIdentifier: "toAboutPage", sender: self)
                 break
             default:

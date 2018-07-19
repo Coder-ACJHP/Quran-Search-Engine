@@ -17,7 +17,7 @@ class AboutAppController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         loadPage(pageName: "privacy_policy")
+        webView.isHidden = true
     }
 
     @IBAction func mbProgressButon(_ sender: Any) {
@@ -40,9 +40,17 @@ class AboutAppController: UIViewController {
     
     @IBAction func privacyButton(_ sender: Any) {
         loadPage(pageName: "privacy_policy")
+        UIView.transition(with: webView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.webView.isHidden = false
+        })
+        
     }
     @IBAction func termsAndCondition(_ sender: Any) {
         loadPage(pageName: "terms")
+        
+        UIView.transition(with: webView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.webView.isHidden = false
+        })
     }
     
     fileprivate func loadPage(pageName: String) {

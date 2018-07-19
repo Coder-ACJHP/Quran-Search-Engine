@@ -18,9 +18,12 @@ class QuranCompleteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //////////////////////////////////////////////////////
+        //Adjust tables & searchbar delegate and dataSources//
+        //////////////////////////////////////////////////////
         indexTable.delegate = self
         indexTable.dataSource = self
-        searchbar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,7 +35,8 @@ class QuranCompleteController: UIViewController {
     }
 }
 
-extension QuranCompleteController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+extension QuranCompleteController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.quranSurahIndex.count
     }
@@ -42,6 +46,7 @@ extension QuranCompleteController: UITableViewDelegate, UITableViewDataSource, U
         let customCell = tableView.dequeueReusableCell(withIdentifier: "surahCell", for: indexPath) as! SearchCell
         let number = String(indexPath.row + 1)
         customCell.surahNameLabel.text = "السورة" + " " + data.quranSurahIndex[number]!
+        
         return customCell
     }
     
@@ -49,13 +54,14 @@ extension QuranCompleteController: UITableViewDelegate, UITableViewDataSource, U
         selectedRowNumber = indexPath.row + 1
         self.performSegue(withIdentifier: "toSurah", sender: self)
     }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText == "" || searchText.isEmpty {
-            
-        } else {
-            
-        }
-    }
 }
+
+
+
+
+
+
+
+
+
+

@@ -133,13 +133,19 @@ class ServiceData {
                 do {
                     let result = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, AnyObject>
                     DispatchQueue.main.async {
-                        var counter = 0
+                        var counter = 1
                         let mainData = result["data"]
                         let ayahArray = mainData!["ayahs"] as! [Dictionary<String, AnyObject>]
                         ayahArray.forEach({ (result) in
                             result.forEach({ (key, value) in
                                 if key == "text" {
-                                    if let text = value as? String {
+                                    if var text = value as? String {
+                                        
+                                        if counter == 1 {
+                                            // Trim Bismillahirrahmanalrahim word from start of surah
+                                            let range = text.index(text.startIndex, offsetBy: 22)..<text.endIndex
+                                            text = String(text[range])
+                                        }
                                         let arabicNumber = String(counter).replaceEnglishDigitsWithArabic
                                         surahAyahs += text + " ⎰\(arabicNumber)⎱ "
                                     }

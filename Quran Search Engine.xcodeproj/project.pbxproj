@@ -13,6 +13,7 @@
 		58B23B2A20FE1C640044CABC /* QuranCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B23B2920FE1C640044CABC /* QuranCompleteController.swift */; };
 		58B23B2C20FE22510044CABC /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B23B2B20FE22510044CABC /* SearchCell.swift */; };
 		58B23B2E20FE3B260044CABC /* SurahCompletlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B23B2D20FE3B260044CABC /* SurahCompletlyController.swift */; };
+		58EE65842100A4DC00DC2C27 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 58EE65832100A4DB00DC2C27 /* terms.html */; };
 		7AF4446F7078CA0EF130BA7E /* Pods_Quran_Search_Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FEEE2437DD6A8AA5411F7A /* Pods_Quran_Search_Engine.framework */; };
 		F213BE0720F9F183007D336B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213BE0620F9F183007D336B /* AppDelegate.swift */; };
 		F213BE0920F9F183007D336B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213BE0820F9F183007D336B /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		58B23B2920FE1C640044CABC /* QuranCompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranCompleteController.swift; sourceTree = "<group>"; };
 		58B23B2B20FE22510044CABC /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		58B23B2D20FE3B260044CABC /* SurahCompletlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahCompletlyController.swift; sourceTree = "<group>"; };
+		58EE65832100A4DB00DC2C27 /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		736445692B7DA9916E9AD1D0 /* Pods-Quran Search Engine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran Search Engine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quran Search Engine/Pods-Quran Search Engine.release.xcconfig"; sourceTree = "<group>"; };
 		D0FEEE2437DD6A8AA5411F7A /* Pods_Quran_Search_Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quran_Search_Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F213BE0320F9F183007D336B /* Quran Search Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quran Search Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				58927CAB20FCE9B200D91E47 /* privacy_policy.html */,
+				58EE65832100A4DB00DC2C27 /* terms.html */,
 				F213BE2720FA3AC5007D336B /* Quran.txt */,
 			);
 			path = Resources;
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58EE65842100A4DC00DC2C27 /* terms.html in Resources */,
 				F213BE1120F9F18F007D336B /* LaunchScreen.storyboard in Resources */,
 				58927CAC20FCE9B200D91E47 /* privacy_policy.html in Resources */,
 				F213BE2820FA3AC5007D336B /* Quran.txt in Resources */,
