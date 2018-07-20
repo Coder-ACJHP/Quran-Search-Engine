@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var searchResultLabel: UILabel!
+    @IBOutlet weak var searchResultView: UIVisualEffectView!
     
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
     var blackViewConstrains = [NSLayoutConstraint]()
     let blackView: UIView = {
         let shadow = UIView()
-        shadow.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        shadow.backgroundColor = UIColor(white: 0, alpha: 0.7)
         shadow.frame.size = CGSize(width: 375, height: 690)
         shadow.translatesAutoresizingMaskIntoConstraints = false
         return shadow
@@ -60,6 +61,10 @@ class ViewController: UIViewController {
         
         // Get default text for label
         fixedText = searchResultLabel.text!
+        
+        // Add border to result label holder
+        searchResultView.layer.borderWidth = 0.5
+        searchResultView.layer.borderColor = UIColor.gray.cgColor
         
         //////////////////////////////////////////////////////
         //Adjust tables & searchbar delegate and dataSources//
