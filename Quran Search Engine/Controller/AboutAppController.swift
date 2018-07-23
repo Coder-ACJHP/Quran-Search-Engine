@@ -8,15 +8,26 @@
 
 import UIKit
 import WebKit
+import MBProgressHUD
 
 class AboutAppController: UIViewController {
 
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
-    
+    // Create animated indicator instance
+    var spinnerActivity: MBProgressHUD?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get application version number and show it on label
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            self.versionLabel.text = version
+        }
+        
+        webView.layer.cornerRadius = 8
+        webView.layer.borderWidth = 3
+        webView.layer.borderColor = UIColor.gray.cgColor
         webView.isHidden = true
     }
 
@@ -54,8 +65,14 @@ class AboutAppController: UIViewController {
     }
     
     fileprivate func loadPage(pageName: String) {
+        // Initialize spinner (MBHUD)
+        spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
+        // Change some properties of spinner
+        spinnerActivity?.label.text = "يرجى الأنتظار"
+        spinnerActivity?.isUserInteractionEnabled = true
         let url = Bundle.main.url(forResource: pageName, withExtension: "html")
         let request = URLRequest(url: url!)
         webView.load(request)
+        self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
     }
 }

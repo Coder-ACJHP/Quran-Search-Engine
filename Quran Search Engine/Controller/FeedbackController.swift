@@ -24,6 +24,12 @@ class FeedbackController: UIViewController, MFMailComposeViewControllerDelegate 
     
     @IBAction func sendButtonPressed(_ sender: Any) {
         
+        if issueNameField.text != "" && issueDetailField.text != ""  {
+            
+            sendEmail(subject: issueNameField.text!, detail: issueDetailField.text!)
+        } else {
+            showError(title: "حدث خطأ", message: "يرجى ملء جميع الفراغات")
+        }
     }
     
     fileprivate func sendEmail(subject: String, detail: String) {
@@ -37,7 +43,7 @@ class FeedbackController: UIViewController, MFMailComposeViewControllerDelegate 
             present(mail, animated: true, completion: nil)
         
         } else {
-            self.showError()
+            self.showError(title: "عذراً", message: "لا يمكن إرسال البريد حاليا! يرجى المحاولة مرة أخرى في وقت لاحق")
         }
     }
     
@@ -45,10 +51,13 @@ class FeedbackController: UIViewController, MFMailComposeViewControllerDelegate 
         controller.dismiss(animated: true)
     }
     
-    func showError() {
-        let alert = UIAlertController(title: "عذراً", message: "لا يمكن إرسال البريد حاليا! يرجى المحاولة مرة أخرى في وقت لاحق", preferredStyle: UIAlertControllerStyle.alert)
+    func showError(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let cancelButton = UIAlertAction(title: "تَخَطَّى", style: UIAlertActionStyle.cancel, handler: nil)
         alert.addAction(cancelButton)
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: {
+            self.issueNameField.text = ""
+            self.issueDetailField.text = ""
+        })
     }
 }

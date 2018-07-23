@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SurahCompletlyController: UIViewController {
 
     var menuIsAppear = false
     var volatileNumber: Int = 0
     var service = ServiceData.shared
+    // Create animated indicator instance
+    var spinnerActivity: MBProgressHUD?
     
+    @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var backgroundSlider: UISlider!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var textView: UITextView!
@@ -25,6 +30,9 @@ class SurahCompletlyController: UIViewController {
         
         hideElementsBeforeLoad()
         
+        // make slider corner radius
+        backgroundSlider.layer.cornerRadius = 5
+        
         // Load data from api
         loadData()
     }
@@ -35,9 +43,16 @@ class SurahCompletlyController: UIViewController {
     }
     
     fileprivate func loadData() {
+        
+        // Initialize spinner (MBHUD)
+        spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
+        // Change some properties of spinner
+        spinnerActivity?.label.text = "جاري التحميل"
+        spinnerActivity?.isUserInteractionEnabled = true
         service.fetchSurahById(surahId: volatileNumber) { (result) in
             self.textView.text = result
         }
+        self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
     }
 
     @IBAction func fontSizeChanged(_ sender: UIStepper) {
@@ -65,6 +80,11 @@ class SurahCompletlyController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.stackView.alpha = 0
         }
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        
+        shadowView.backgroundColor = shadowView.backgroundColor?.withAlphaComponent(CGFloat(sender.value))
     }
 }
 

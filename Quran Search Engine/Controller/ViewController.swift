@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var searchResultLabel: UILabel!
     @IBOutlet weak var searchResultView: UIVisualEffectView!
+    @IBOutlet weak var roundedBgForresultLabel: UIView!
     
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         let topConstraint = blackView.topAnchor.constraint(equalTo: self.view.topAnchor)
         let bottomConstraint = blackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34)
         blackViewConstrains.append(contentsOf: [leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
-        view.addSubview(blackView)
+        self.view.addSubview(blackView)
         NSLayoutConstraint.activate(blackViewConstrains)
         blackView.isHidden = true
         
@@ -63,8 +64,12 @@ class ViewController: UIViewController {
         fixedText = searchResultLabel.text!
         
         // Add border to result label holder
-        searchResultView.layer.borderWidth = 0.5
-        searchResultView.layer.borderColor = UIColor.gray.cgColor
+        searchResultView.layer.borderWidth = 0.75
+        searchResultView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        // Make label view rounded corners
+        roundedBgForresultLabel.layer.cornerRadius = 6
+        
         
         //////////////////////////////////////////////////////
         //Adjust tables & searchbar delegate and dataSources//
@@ -78,6 +83,7 @@ class ViewController: UIViewController {
         searchbar.delegate = self
         
     }
+    
     
     @IBAction func menuButtonPressed(_ sender: Any) {
         

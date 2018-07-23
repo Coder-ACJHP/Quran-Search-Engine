@@ -12,7 +12,7 @@ class DataSource {
     
     static let shared = DataSource()
     
-    let imageArray = [UIImage(named: "read"), UIImage(named: "bug"), UIImage(named: "analytics")]
+    let imageArray = [UIImage(named: "book"), UIImage(named: "bug"), UIImage(named: "about")]
     let textArray = ["قرأن كامل", "بلغنا عن مشكلة", "عن التطبيق"]
     let quranSurahIndex = [
         "1":"الفاتحة",
