@@ -90,6 +90,10 @@ class ViewController: UIViewController {
     }
     
     fileprivate func showMenu() {
+        
+        // If the keyboard is show hide it
+        self.searchbar.endEditing(true)
+        
         //Show menu
         sideMenuLeadingConstrait.constant = 0
         // Show black view
@@ -193,6 +197,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         }
     }
     
+    // Do search
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchText == " " || searchText.isEmpty {
@@ -227,6 +232,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         }
     }
     
+    // Hide keyboard methods
+    // 1- When the scroll starts
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchbar.endEditing(true)
+    }
+    
+    // When the seach button pressed
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchbar.endEditing(true)
+    }
+    
+    // Hide keyboard when cancel button pressed
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        self.view.endEditing(true)
+    }
 }
 
 
