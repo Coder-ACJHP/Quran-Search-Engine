@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var menuIsShown = false
     var searchObject = SearchResultObj()
     let data = ServiceData.shared
+    let animations = Animations.shared
     @IBOutlet weak var sideMenu: UIView!
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var sideMenuLeadingConstrait: NSLayoutConstraint!
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchResultLabel: UILabel!
     @IBOutlet weak var searchResultView: UIVisualEffectView!
     @IBOutlet weak var roundedBgForresultLabel: UIView!
+    @IBOutlet weak var sideMenuShadowView: UIView!
     
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
@@ -63,6 +65,8 @@ class ViewController: UIViewController {
         // Get default text for label
         fixedText = searchResultLabel.text!
         
+        // Side menu shadow layer
+        sideMenuShadowView.backgroundColor = UIColor(white: 0, alpha: 0.7)
         // Add border to result label holder
         searchResultView.layer.borderWidth = 0.75
         searchResultView.layer.borderColor = UIColor.lightGray.cgColor
@@ -233,7 +237,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     // Do search
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if searchText == " " || searchText.isEmpty {
+        if searchText == "" || searchText.count <= 0 {
             // Change color to red because no result
             self.searchResultLabel.textColor = UIColor.red
             // Set the original text to label
@@ -260,7 +264,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 let numberAsString = String(self.resultlist.count)
                 self.searchResultLabel.text = "تم العثور على \(numberAsString.replaceEnglishDigitsWithArabic) أية"
             }
-            self.resultTable.reloadData()
+            
+            // Table populated now and lets to animate cells
+            animations.animateTableCells(table: self.resultTable)
+            
             self.spinnerActivity?.hide(animated: true, afterDelay: 1.0)
         }
     }

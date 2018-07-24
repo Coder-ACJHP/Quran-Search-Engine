@@ -24,13 +24,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-hR-Ked">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="launch-screen-img" translatesAutoresizingMaskIntoConstraints="NO" id="LJl-kr-Bgu">
-                                        <rect key="frame" x="95" y="216.5" width="130" height="135"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="135" id="319-SP-ZHu"/>
-                                            <constraint firstAttribute="width" constant="130" id="C0F-DU-0MO"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 Coder ACJHP All Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-oo-q3n">
                                         <rect key="frame" x="16" y="547" width="288" height="21"/>
                                         <constraints>
@@ -49,16 +42,23 @@
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="launch-screen-img" translatesAutoresizingMaskIntoConstraints="NO" id="Vhg-Ct-SdA">
+                                        <rect key="frame" x="100" y="224" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="WLd-3j-Okq"/>
+                                            <constraint firstAttribute="height" constant="120" id="oBM-ed-tWS"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="qDQ-JY-Zjx" firstAttribute="top" secondItem="Vhg-Ct-SdA" secondAttribute="bottom" constant="18" id="5M6-ST-YpP"/>
                                     <constraint firstItem="rDb-oo-q3n" firstAttribute="leading" secondItem="lYj-hR-Ked" secondAttribute="leading" constant="16" id="GCL-Pw-Dxa"/>
                                     <constraint firstAttribute="trailing" secondItem="rDb-oo-q3n" secondAttribute="trailing" constant="16" id="IxF-wd-KYL"/>
+                                    <constraint firstItem="Vhg-Ct-SdA" firstAttribute="centerY" secondItem="lYj-hR-Ked" secondAttribute="centerY" id="Jey-5K-fmP"/>
                                     <constraint firstItem="qDQ-JY-Zjx" firstAttribute="leading" secondItem="lYj-hR-Ked" secondAttribute="leading" constant="16" id="OHK-g0-e3O"/>
-                                    <constraint firstItem="LJl-kr-Bgu" firstAttribute="centerX" secondItem="lYj-hR-Ked" secondAttribute="centerX" id="Tbz-Eq-lCN"/>
-                                    <constraint firstItem="qDQ-JY-Zjx" firstAttribute="top" secondItem="LJl-kr-Bgu" secondAttribute="bottom" constant="10.5" id="eWx-CI-9mx"/>
+                                    <constraint firstItem="Vhg-Ct-SdA" firstAttribute="centerX" secondItem="lYj-hR-Ked" secondAttribute="centerX" id="gSD-Oz-OWq"/>
                                     <constraint firstAttribute="trailing" secondItem="qDQ-JY-Zjx" secondAttribute="trailing" constant="16" id="jMx-Ij-XWh"/>
-                                    <constraint firstItem="LJl-kr-Bgu" firstAttribute="centerY" secondItem="lYj-hR-Ked" secondAttribute="centerY" id="kNF-nR-f4k"/>
                                     <constraint firstAttribute="bottom" secondItem="rDb-oo-q3n" secondAttribute="bottom" id="ylI-I6-myx"/>
                                 </constraints>
                             </view>

@@ -13,7 +13,7 @@ class QuranCompleteController: UIViewController {
     var selectedRowNumber = 0
     var data = DataSource.shared
     var service = ServiceData.shared
-    @IBOutlet weak var searchbar: UITableView!
+    var animations = Animations.shared
     @IBOutlet weak var indexTable: UITableView!
     
     override func viewDidLoad() {
@@ -24,6 +24,11 @@ class QuranCompleteController: UIViewController {
         //////////////////////////////////////////////////////
         indexTable.delegate = self
         indexTable.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animations.animateTableCells(table: self.indexTable)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
