@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchResultView: UIVisualEffectView!
     @IBOutlet weak var roundedBgForresultLabel: UIView!
     @IBOutlet weak var sideMenuShadowView: UIView!
+    @IBOutlet var tableViewBackground: UIView!
+    @IBOutlet weak var tableBackgroundAlert: UIView!
     
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
     
     // Search result will collect here
     var resultlist = [String]()
-    
+
     // Shadow layer will use when side menu appear
     var blackViewConstrains = [NSLayoutConstraint]()
     let blackView: UIView = {
@@ -61,6 +63,18 @@ class ViewController: UIViewController {
         self.view.addSubview(blackView)
         NSLayoutConstraint.activate(blackViewConstrains)
         blackView.isHidden = true
+        
+        /////////////////////////////////////////////////////////
+        //Adjust table is empty alert (view) and set constraits//
+        /////////////////////////////////////////////////////////
+        resultTable.backgroundView = tableViewBackground
+        tableViewBackground.translatesAutoresizingMaskIntoConstraints = false
+        tableViewBackground.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        tableViewBackground.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        tableViewBackground.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        tableViewBackground.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34).isActive = true
+        tableViewBackground.isHidden = true
+        tableBackgroundAlert.layer.cornerRadius = 15
         
         // Get default text for label
         fixedText = searchResultLabel.text!
@@ -89,6 +103,10 @@ class ViewController: UIViewController {
         
         searchbar.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableBackgroundAlert.animateMe()
     }
     
     // Add edge pan gesture to open menu via swiping left edge
@@ -181,6 +199,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         if tableView == self.sideMenuTableView {
             returnVal = DataSource.shared.textArray.count
         } else if tableView == self.resultTable {
+            
+            if resultlist.count == 0 {
+                tableView.separatorStyle = .none
+                tableView.isScrollEnabled = false
+                tableViewBackground.isHidden = false
+            } else {
+                tableView.separatorStyle = .singleLine
+                tableView.isScrollEnabled = true
+                tableViewBackground.isHidden = true
+            }
             returnVal =  resultlist.count
         }
         return returnVal
@@ -239,7 +267,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         
         if searchText == "" || searchText.count <= 0 {
             // Change color to red because no result
-            self.searchResultLabel.textColor = UIColor.red
+            self.searchResultLabel.textColor = UIColor.black
             // Set the original text to label
             self.searchResultLabel.text = fixedText
             // Clean list from old results

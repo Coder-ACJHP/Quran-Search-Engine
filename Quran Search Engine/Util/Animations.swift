@@ -36,3 +36,24 @@ class Animations: NSObject {
         }
     }
 }
+
+extension UIView {
+    
+    func animateMe() {
+        
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.7
+        animation.repeatCount = .infinity
+        animation.autoreverses = true
+        
+        let fromPoint = CGPoint(x: center.x, y: center.y  - 10)
+        let fromValue = NSValue(cgPoint: fromPoint)
+        
+        let toPoint = CGPoint(x: center.x, y: center.y  + 10)
+        let toValue = NSValue(cgPoint: toPoint)
+        
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        self.layer.add(animation, forKey: nil)
+    }
+}
