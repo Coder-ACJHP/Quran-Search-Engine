@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-hR-Ked">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="LJl-kr-Bgu">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="launch-screen-img" translatesAutoresizingMaskIntoConstraints="NO" id="LJl-kr-Bgu">
                                         <rect key="frame" x="95" y="216.5" width="130" height="135"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="135" id="319-SP-ZHu"/>
@@ -83,7 +83,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about" width="512" height="512"/>
         <image name="background" width="1125" height="2436"/>
+        <image name="launch-screen-img" width="167" height="167"/>
     </resources>
 </document>

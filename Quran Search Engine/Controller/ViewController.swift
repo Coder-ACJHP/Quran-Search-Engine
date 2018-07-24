@@ -70,6 +70,9 @@ class ViewController: UIViewController {
         // Make label view rounded corners
         roundedBgForresultLabel.layer.cornerRadius = 6
         
+        // Add swipe gesture to side menu
+        addGestureToSideMenu()
+        addEdgePanGestureToScreen()
         
         //////////////////////////////////////////////////////
         //Adjust tables & searchbar delegate and dataSources//
@@ -84,6 +87,30 @@ class ViewController: UIViewController {
         
     }
     
+    // Add edge pan gesture to open menu via swiping left edge
+    fileprivate func addEdgePanGestureToScreen() {
+        let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleEdgeSwipe))
+        edgeGesture.edges = .left
+        self.view.addGestureRecognizer(edgeGesture)
+    }
+    
+    @objc fileprivate func handleEdgeSwipe() {
+        showMenu()
+        menuIsShown = !menuIsShown
+    }
+    
+    // Add swipe gesture to can be close when swiping to left
+    fileprivate func addGestureToSideMenu() {
+        sideMenu.isUserInteractionEnabled = true
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeToLeft))
+        swipeGesture.direction = .left
+        sideMenu.addGestureRecognizer(swipeGesture)
+    }
+    
+    @objc fileprivate func handleSwipeToLeft() {
+        hideMenu()
+        menuIsShown = !menuIsShown
+    }
     
     @IBAction func menuButtonPressed(_ sender: Any) {
         
