@@ -20,10 +20,13 @@ class DetailController: UIViewController {
     @IBOutlet weak var surahNameLabel: UILabel!
     @IBOutlet weak var landingPlaceLabel: UILabel!
     @IBOutlet weak var juzNumberLabel: UILabel!
-    
+    @IBOutlet weak var backgroundWallpaper: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add motion effect
+        backgroundWallpaper.moveViaMotionEffect()
         
         loadData()
      }

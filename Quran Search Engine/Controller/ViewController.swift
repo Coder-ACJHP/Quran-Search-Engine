@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundedBgForresultLabel: UIView!
     @IBOutlet weak var sideMenuShadowView: UIView!
     @IBOutlet var tableViewBackground: UIView!
-    @IBOutlet weak var tableBackgroundAlert: UIView!
+    @IBOutlet weak var tableAlert: UIView!
+    @IBOutlet weak var tableAlertBackground: UIImageView!
     
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
@@ -74,7 +75,9 @@ class ViewController: UIViewController {
         tableViewBackground.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         tableViewBackground.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34).isActive = true
         tableViewBackground.isHidden = true
-        tableBackgroundAlert.layer.cornerRadius = 15
+        
+        // Add motion effect
+        tableAlertBackground.moveViaMotionEffect()
         
         // Get default text for label
         fixedText = searchResultLabel.text!
@@ -106,7 +109,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableBackgroundAlert.animateMe()
+        tableAlert.animateMe()
     }
     
     // Add edge pan gesture to open menu via swiping left edge

@@ -16,6 +16,9 @@
 		58B23B2A20FE1C640044CABC /* QuranCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B23B2920FE1C640044CABC /* QuranCompleteController.swift */; };
 		58B23B2C20FE22510044CABC /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B23B2B20FE22510044CABC /* SearchCell.swift */; };
 		58B23B2E20FE3B260044CABC /* SurahCompletlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B23B2D20FE3B260044CABC /* SurahCompletlyController.swift */; };
+		58E1CB0821086797004A3CC4 /* MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E1CB0721086797004A3CC4 /* MotionEffect.swift */; };
+		58E1CB0A210872E1004A3CC4 /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E1CB09210872E1004A3CC4 /* HistoryController.swift */; };
+		58E1CB0C210877E4004A3CC4 /* TempDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E1CB0B210877E4004A3CC4 /* TempDatabase.swift */; };
 		58EE65842100A4DC00DC2C27 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 58EE65832100A4DB00DC2C27 /* terms.html */; };
 		7AF4446F7078CA0EF130BA7E /* Pods_Quran_Search_Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FEEE2437DD6A8AA5411F7A /* Pods_Quran_Search_Engine.framework */; };
 		F213BE0720F9F183007D336B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213BE0620F9F183007D336B /* AppDelegate.swift */; };
@@ -45,6 +48,9 @@
 		58B23B2920FE1C640044CABC /* QuranCompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranCompleteController.swift; sourceTree = "<group>"; };
 		58B23B2B20FE22510044CABC /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		58B23B2D20FE3B260044CABC /* SurahCompletlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahCompletlyController.swift; sourceTree = "<group>"; };
+		58E1CB0721086797004A3CC4 /* MotionEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionEffect.swift; sourceTree = "<group>"; };
+		58E1CB09210872E1004A3CC4 /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		58E1CB0B210877E4004A3CC4 /* TempDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempDatabase.swift; sourceTree = "<group>"; };
 		58EE65832100A4DB00DC2C27 /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		736445692B7DA9916E9AD1D0 /* Pods-Quran Search Engine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran Search Engine.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quran Search Engine/Pods-Quran Search Engine.release.xcconfig"; sourceTree = "<group>"; };
 		D0FEEE2437DD6A8AA5411F7A /* Pods_Quran_Search_Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quran_Search_Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +163,7 @@
 				58927CA920FCE44A00D91E47 /* FeedbackController.swift */,
 				58B23B2920FE1C640044CABC /* QuranCompleteController.swift */,
 				58B23B2D20FE3B260044CABC /* SurahCompletlyController.swift */,
+				58E1CB09210872E1004A3CC4 /* HistoryController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +177,8 @@
 				F213BE2E20FA7A29007D336B /* EnglishNumberToArabic.swift */,
 				588926FF2105FFBA00E642B7 /* DesignableUISlider.swift */,
 				5870BA8F210756DE00C90498 /* Animations.swift */,
+				58E1CB0721086797004A3CC4 /* MotionEffect.swift */,
+				58E1CB0B210877E4004A3CC4 /* TempDatabase.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -321,6 +330,8 @@
 				F213BE2120FA21DE007D336B /* ResultTableCell.swift in Sources */,
 				5870BA90210756DE00C90498 /* Animations.swift in Sources */,
 				588927002105FFBA00E642B7 /* DesignableUISlider.swift in Sources */,
+				58E1CB0C210877E4004A3CC4 /* TempDatabase.swift in Sources */,
+				58E1CB0821086797004A3CC4 /* MotionEffect.swift in Sources */,
 				58B23B2A20FE1C640044CABC /* QuranCompleteController.swift in Sources */,
 				58B23B2C20FE22510044CABC /* SearchCell.swift in Sources */,
 				F213BE2A20FA3F1B007D336B /* FileReader.swift in Sources */,
@@ -329,6 +340,7 @@
 				F213BE1F20FA0B65007D336B /* DataSource.swift in Sources */,
 				F213BE0720F9F183007D336B /* AppDelegate.swift in Sources */,
 				F249184720FA9891000D8029 /* SearchResultObj.swift in Sources */,
+				58E1CB0A210872E1004A3CC4 /* HistoryController.swift in Sources */,
 				58927CAA20FCE44A00D91E47 /* FeedbackController.swift in Sources */,
 				F213BE2F20FA7A29007D336B /* EnglishNumberToArabic.swift in Sources */,
 				F249184920FAAAE1000D8029 /* DetailController.swift in Sources */,
@@ -479,8 +491,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N26XM7U465;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Quran Search Engine/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,8 +512,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N26XM7U465;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Quran Search Engine/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

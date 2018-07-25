@@ -24,6 +24,7 @@ class SurahCompletlyController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var biggerFontIcon: UILabel!
     @IBOutlet weak var smallerFontIcon: UILabel!
+    @IBOutlet weak var backgroundWallpaper: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,9 @@ class SurahCompletlyController: UIViewController {
         
         // make slider corner radius
         backgroundSlider.layer.cornerRadius = 5
+        
+        // Add motion effect
+        backgroundWallpaper.moveViaMotionEffect()
         
         // Load data from api
         loadData()

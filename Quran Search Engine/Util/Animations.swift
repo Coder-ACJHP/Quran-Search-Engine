@@ -41,19 +41,13 @@ extension UIView {
     
     func animateMe() {
         
-        let animation = CABasicAnimation(keyPath: "position")
+        let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = 0.7
         animation.repeatCount = .infinity
         animation.autoreverses = true
         
-        let fromPoint = CGPoint(x: center.x, y: center.y  - 10)
-        let fromValue = NSValue(cgPoint: fromPoint)
-        
-        let toPoint = CGPoint(x: center.x, y: center.y  + 10)
-        let toValue = NSValue(cgPoint: toPoint)
-        
-        animation.fromValue = fromValue
-        animation.toValue = toValue
+        animation.fromValue = self.frame.origin.y + 40
+        animation.toValue = self.frame.origin.y + 20
         self.layer.add(animation, forKey: nil)
     }
 }

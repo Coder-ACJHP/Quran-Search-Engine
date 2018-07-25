@@ -15,10 +15,14 @@ class FeedbackController: UIViewController, MFMailComposeViewControllerDelegate 
     @IBOutlet weak var issueNameField: UITextField!
     @IBOutlet weak var issueDetailField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var backgroundWallpaper: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sendButton.layer.cornerRadius = 5
+        
+        // Add motion effect
+        backgroundWallpaper.moveViaMotionEffect()
     }
 
     

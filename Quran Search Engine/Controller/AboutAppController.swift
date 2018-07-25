@@ -14,6 +14,7 @@ class AboutAppController: UIViewController {
 
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var backgroundWallpaper: UIImageView!
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
     
@@ -29,6 +30,9 @@ class AboutAppController: UIViewController {
         webView.layer.borderWidth = 3
         webView.layer.borderColor = UIColor.gray.cgColor
         webView.isHidden = true
+        
+        // Add motion effect
+        backgroundWallpaper.moveViaMotionEffect()
     }
 
     @IBAction func mbProgressButon(_ sender: Any) {
