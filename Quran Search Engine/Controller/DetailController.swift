@@ -34,9 +34,7 @@ class DetailController: UIViewController {
     fileprivate func loadData() {
             
         service.findOthmaniAyahTextById(ayahNumber: self.ayahNumber!, surahNumber: self.surahNumber!) { (resultObj) in
-            
-        print(resultObj)
-        
+                    
             self.ayahNumberLabel.text = String(resultObj.ayahNumber).replaceEnglishDigitsWithArabic
             self.ayahtextLabel.text = resultObj.ayahText
             self.surahNameLabel.text = resultObj.surahName

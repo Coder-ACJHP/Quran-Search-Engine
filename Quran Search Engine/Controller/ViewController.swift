@@ -11,12 +11,7 @@ import MBProgressHUD
 
 class ViewController: UIViewController {
 
-    var fixedText = ""
-    var searchQuery = ""
-    var menuIsShown = false
-    var searchObject = SearchResultObj()
-    let data = ServiceData.shared
-    let animations = Animations.shared
+
     @IBOutlet weak var sideMenu: UIView!
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var sideMenuLeadingConstrait: NSLayoutConstraint!
@@ -26,20 +21,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchResultLabel: UILabel!
     @IBOutlet weak var searchResultView: UIVisualEffectView!
     @IBOutlet weak var roundedBgForresultLabel: UIView!
-    @IBOutlet weak var sideMenuShadowView: UIView!
     @IBOutlet var tableViewBackground: UIView!
     @IBOutlet weak var tableAlert: UIView!
     @IBOutlet weak var tableAlertBackground: UIImageView!
     
+    var fixedText = ""
+    var searchQuery = ""
+    var menuIsShown = false
+    // Entity object
+    var searchObject = SearchResultObj()
+    // Api data service
+    let data = ServiceData.shared
+    // User defaults for saving history
+    let defaults = TempDatabase.shared
+    // Animation class instance
+    let animations = Animations.shared
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
-    
     // Set custom color
     let darkGreen = UIColor(red:0.00, green:0.57, blue:0.54, alpha:1.0)
-    
     // Search result will collect here
     var resultlist = [String]()
-
+    // Searched keywords will collect here
+    var searchKeywords = [String]()
+    var searchController = UISearchController()
     // Shadow layer will use when side menu appear
     var blackViewConstrains = [NSLayoutConstraint]()
     let blackView: UIView = {
@@ -53,37 +58,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ////////////////////////////////////////////////
-        //Setup shadow layer (view) and set constraits//
-        ////////////////////////////////////////////////
-        let leadingConstraint = blackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        let trailingConstraint = blackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-        let topConstraint = blackView.topAnchor.constraint(equalTo: self.view.topAnchor)
-        let bottomConstraint = blackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34)
-        blackViewConstrains.append(contentsOf: [leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
-        self.view.addSubview(blackView)
-        NSLayoutConstraint.activate(blackViewConstrains)
-        blackView.isHidden = true
+        setupBlackShadowView()
         
-        /////////////////////////////////////////////////////////
-        //Adjust table is empty alert (view) and set constraits//
-        /////////////////////////////////////////////////////////
-        resultTable.backgroundView = tableViewBackground
-        tableViewBackground.translatesAutoresizingMaskIntoConstraints = false
-        tableViewBackground.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        tableViewBackground.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        tableViewBackground.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        tableViewBackground.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34).isActive = true
-        tableViewBackground.isHidden = true
-        
-        // Add motion effect
-        tableAlertBackground.moveViaMotionEffect()
+        setupEmptyTableViewAlert()
         
         // Get default text for label
         fixedText = searchResultLabel.text!
         
-        // Side menu shadow layer
-        sideMenuShadowView.backgroundColor = UIColor(white: 0, alpha: 0.7)
         // Add border to result label holder
         searchResultView.layer.borderWidth = 0.75
         searchResultView.layer.borderColor = UIColor.lightGray.cgColor
@@ -95,6 +76,50 @@ class ViewController: UIViewController {
         addGestureToSideMenu()
         addEdgePanGestureToScreen()
         
+        setupDelegatesAndDatasources()
+        
+        // Load history
+        getSearchedKeywordHistory()
+        
+    }
+    
+    private func getSearchedKeywordHistory() {
+        searchKeywords = defaults.getHistoryList()
+    }
+    
+    fileprivate func setupBlackShadowView() {
+        ////////////////////////////////////////////////
+        //Setup shadow layer (view) and set constraits//
+        ////////////////////////////////////////////////
+        let leadingConstraint = blackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        let trailingConstraint = blackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        let topConstraint = blackView.topAnchor.constraint(equalTo: self.view.topAnchor)
+        let bottomConstraint = blackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        blackViewConstrains.append(contentsOf: [leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
+        self.view.addSubview(blackView)
+        NSLayoutConstraint.activate(blackViewConstrains)
+        blackView.isHidden = true
+    }
+    
+    fileprivate func setupEmptyTableViewAlert() {
+        /////////////////////////////////////////////////////////
+        //Adjust table is empty alert (view) and set constraits//
+        /////////////////////////////////////////////////////////
+        resultTable.backgroundView = tableViewBackground
+        tableViewBackground.translatesAutoresizingMaskIntoConstraints = false
+        tableViewBackground.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        tableViewBackground.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        // Get searchbar height to equal top anchor with it
+        let searchbarHeight: CGFloat = self.searchbar.bounds.size.height
+        tableViewBackground.topAnchor.constraint(equalTo: self.view.topAnchor, constant: searchbarHeight).isActive = true
+        tableViewBackground.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34).isActive = true
+        tableViewBackground.isHidden = true
+        
+        // Add motion effect
+        tableAlertBackground.moveViaMotionEffect()
+    }
+    
+    fileprivate func setupDelegatesAndDatasources() {
         //////////////////////////////////////////////////////
         //Adjust tables & searchbar delegate and dataSources//
         //////////////////////////////////////////////////////
@@ -105,11 +130,26 @@ class ViewController: UIViewController {
         resultTable.dataSource = self
         
         searchbar.delegate = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(searchByHistory(_:)), name: NSNotification.Name(rawValue: "pickedFormHistory"), object: nil)
         tableAlert.animateMe()
+    }
+    
+    @objc fileprivate func searchByHistory(_ notification: NSNotification) {
+        if let dict = notification.userInfo as Dictionary? {
+            if let query = dict["pickedQuery"] as? String {
+                UIPasteboard.general.string = query
+                informUserTextIsCoppied()
+            }
+        }
+    }
+    
+    private func informUserTextIsCoppied() {
+        let alert = UIAlertController(title: "ملاحظة", message: "تم نسخ الكلمة إلى الحافظة", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "تخطي", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // Add edge pan gesture to open menu via swiping left edge
@@ -311,6 +351,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     
     // When the seach button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchQuery != "" && searchQuery.count >= 3 {
+            searchKeywords.append(searchQuery)
+            defaults.saveHistoryList(list: searchKeywords)
+        }
         self.searchbar.endEditing(true)
     }
     
@@ -319,6 +363,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         searchBar.endEditing(true)
         self.view.endEditing(true)
     }
+    
+    
 }
 
 
