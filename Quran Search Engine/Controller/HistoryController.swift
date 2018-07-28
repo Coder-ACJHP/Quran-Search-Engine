@@ -52,12 +52,16 @@ class HistoryController: UIViewController {
         animations.animateTableCells(table: self.dataTable)
     }
     
-    // MARK: - Navigation (segue) Method
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "pickedFormHistory"), object: nil, userInfo: ["pickedQuery": selectedCellText])
+    private func informUserTextIsCoppied() {
+        UIPasteboard.general.string = selectedCellText
+        let alert = UIAlertController(title: "ملاحظة", message: "تم نسخ الكلمة إلى الحافظة", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "تخطي", style: UIAlertActionStyle.cancel, handler: { (alert: UIAlertAction!) in
+            self.performSegue(withIdentifier: "toMainView", sender: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
-    
 }
+
 
 extension HistoryController: UITableViewDelegate, UITableViewDataSource {
     
@@ -87,7 +91,8 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! HistoryCell
         selectedCellText = (currentCell.textLabel?.text)!
-        performSegue(withIdentifier: "toMainView", sender: nil)
+        
+        informUserTextIsCoppied()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

@@ -133,23 +133,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(searchByHistory(_:)), name: NSNotification.Name(rawValue: "pickedFormHistory"), object: nil)
         tableAlert.animateMe()
-    }
-    
-    @objc fileprivate func searchByHistory(_ notification: NSNotification) {
-        if let dict = notification.userInfo as Dictionary? {
-            if let query = dict["pickedQuery"] as? String {
-                UIPasteboard.general.string = query
-                informUserTextIsCoppied()
-            }
-        }
-    }
-    
-    private func informUserTextIsCoppied() {
-        let alert = UIAlertController(title: "ملاحظة", message: "تم نسخ الكلمة إلى الحافظة", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "تخطي", style: UIAlertActionStyle.cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     // Add edge pan gesture to open menu via swiping left edge
@@ -352,8 +336,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     // When the seach button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchQuery != "" && searchQuery.count >= 3 {
-            searchKeywords.append(searchQuery)
-            defaults.saveHistoryList(list: searchKeywords)
+            if !searchKeywords.contains(searchQuery) {
+                searchKeywords.append(searchQuery)
+                defaults.saveHistoryList(list: searchKeywords)
+            }
         }
         self.searchbar.endEditing(true)
     }
