@@ -30,9 +30,6 @@ class AboutAppController: UIViewController {
         webView.layer.borderWidth = 3
         webView.layer.borderColor = UIColor.gray.cgColor
         webView.isHidden = true
-        
-        // Add motion effect
-        backgroundWallpaper.moveViaMotionEffect()
     }
 
     @IBAction func mbProgressButon(_ sender: Any) {

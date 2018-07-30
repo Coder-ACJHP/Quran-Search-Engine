@@ -34,9 +34,6 @@ class SurahCompletlyController: UIViewController {
         // make slider corner radius
         backgroundSlider.layer.cornerRadius = 5
         
-        // Add motion effect
-        backgroundWallpaper.moveViaMotionEffect()
-        
         // Load data from api
         loadData()
     }

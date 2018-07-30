@@ -39,27 +39,23 @@ class HistoryController: UIViewController {
         // Hide it !
         emptyTableView.isHidden = true
         
-        // Mark :- Add motion effect to background.
-        emptyTableViewBackground.moveViaMotionEffect()
-        
         // Remove spaces that added for header and footer in table view.
         dataTable.contentInset = UIEdgeInsetsMake(-30, 0, -20, 0);
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         // Mark :- Animate table view cells like spring.
         animations.animateTableCells(table: self.dataTable)
     }
     
-    private func informUserTextIsCoppied() {
-        UIPasteboard.general.string = selectedCellText
-        let alert = UIAlertController(title: "ملاحظة", message: "تم نسخ الكلمة إلى الحافظة", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "تخطي", style: UIAlertActionStyle.cancel, handler: { (alert: UIAlertAction!) in
-            self.performSegue(withIdentifier: "toMainView", sender: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMainView" {
+            let destinationController = segue.destination as! MainController
+            destinationController.searchQuery = selectedCellText
+        }
     }
+    
 }
 
 
@@ -92,7 +88,7 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
         let currentCell = tableView.cellForRow(at: indexPath) as! HistoryCell
         selectedCellText = (currentCell.textLabel?.text)!
         
-        informUserTextIsCoppied()
+        self.performSegue(withIdentifier: "toMainView", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

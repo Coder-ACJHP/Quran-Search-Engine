@@ -9,14 +9,12 @@
 import UIKit
 import MBProgressHUD
 
-class ViewController: UIViewController {
-
-
+class MainController: UIViewController {
+    
     @IBOutlet weak var sideMenu: UIView!
     @IBOutlet weak var sideMenuButton: UIBarButtonItem!
     @IBOutlet weak var sideMenuLeadingConstrait: NSLayoutConstraint!
     @IBOutlet weak var sideMenuTableView: UITableView!
-    @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var searchResultLabel: UILabel!
     @IBOutlet weak var searchResultView: UIVisualEffectView!
@@ -38,13 +36,16 @@ class ViewController: UIViewController {
     let animations = Animations.shared
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
+    // New Searchbar
+    var searchController: UISearchController!
     // Set custom color
     let darkGreen = UIColor(red:0.00, green:0.57, blue:0.54, alpha:1.0)
     // Search result will collect here
     var resultlist = [String]()
     // Searched keywords will collect here
     var searchKeywords = [String]()
-    var searchController = UISearchController()
+    
+    
     // Shadow layer will use when side menu appear
     var blackViewConstrains = [NSLayoutConstraint]()
     let blackView: UIView = {
@@ -59,28 +60,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupBlackShadowView()
-        
-        setupEmptyTableViewAlert()
-        
         // Get default text for label
         fixedText = searchResultLabel.text!
-        
         // Add border to result label holder
         searchResultView.layer.borderWidth = 0.75
         searchResultView.layer.borderColor = UIColor.lightGray.cgColor
-        
         // Make label view rounded corners
         roundedBgForresultLabel.layer.cornerRadius = 6
-        
         // Add swipe gesture to side menu
         addGestureToSideMenu()
         addEdgePanGestureToScreen()
-        
-        setupDelegatesAndDatasources()
-        
         // Load history
         getSearchedKeywordHistory()
         
+        adjustSearchBar()
+
+        setupDelegatesAndDatasources()
+        
+        setupEmptyTableViewAlert()
     }
     
     private func getSearchedKeywordHistory() {
@@ -94,7 +91,7 @@ class ViewController: UIViewController {
         let leadingConstraint = blackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         let trailingConstraint = blackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         let topConstraint = blackView.topAnchor.constraint(equalTo: self.view.topAnchor)
-        let bottomConstraint = blackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        let bottomConstraint = blackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34)
         blackViewConstrains.append(contentsOf: [leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         self.view.addSubview(blackView)
         NSLayoutConstraint.activate(blackViewConstrains)
@@ -110,13 +107,10 @@ class ViewController: UIViewController {
         tableViewBackground.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         tableViewBackground.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         // Get searchbar height to equal top anchor with it
-        let searchbarHeight: CGFloat = self.searchbar.bounds.size.height
+        let searchbarHeight: CGFloat = searchController.searchBar.bounds.size.height
         tableViewBackground.topAnchor.constraint(equalTo: self.view.topAnchor, constant: searchbarHeight).isActive = true
         tableViewBackground.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34).isActive = true
         tableViewBackground.isHidden = true
-        
-        // Add motion effect
-        tableAlertBackground.moveViaMotionEffect()
     }
     
     fileprivate func setupDelegatesAndDatasources() {
@@ -128,15 +122,41 @@ class ViewController: UIViewController {
         
         resultTable.delegate = self
         resultTable.dataSource = self
+        searchController.searchBar.delegate = self
         
-        searchbar.delegate = self
+    }
+    
+    private func adjustSearchBar() {
+        // Searchbar setup
+        // Initializing with searchResultsController set to nil means that
+        // searchController will use this view controller to display the search results
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        
+        // If we are using this same view controller to present the results
+        // dimming it out wouldn't make sense. Should probably only set
+        // this to yes if using another controller to display the search results.
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.showsCancelButton = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "ادخل النص"
+        resultTable.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        // Animate empty table alert
         tableAlert.animateMe()
+        
+        if searchQuery != "" {
+            searchController.searchBar.text = searchQuery
+        }
     }
     
-    // Add edge pan gesture to open menu via swiping left edge
+    // MARK :- Add edge pan gesture to open menu via swiping left edge
     fileprivate func addEdgePanGestureToScreen() {
         let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleEdgeSwipe))
         edgeGesture.edges = .left
@@ -148,7 +168,7 @@ class ViewController: UIViewController {
         menuIsShown = !menuIsShown
     }
     
-    // Add swipe gesture to can be close when swiping to left
+    // MARK :- Add swipe gesture to can be close when swiping to left
     fileprivate func addGestureToSideMenu() {
         sideMenu.isUserInteractionEnabled = true
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeToLeft))
@@ -161,6 +181,7 @@ class ViewController: UIViewController {
         menuIsShown = !menuIsShown
     }
     
+    // MARK :- Menu button pressed
     @IBAction func menuButtonPressed(_ sender: Any) {
         
         if menuIsShown {
@@ -172,15 +193,14 @@ class ViewController: UIViewController {
     }
     
     fileprivate func showMenu() {
+        self.sideMenu.becomeFirstResponder()
         
         // If the keyboard is show hide it
-        self.searchbar.endEditing(true)
-        
+        searchController.searchBar.endEditing(true)
         //Show menu
         sideMenuLeadingConstrait.constant = 0
         // Show black view
         blackView.isHidden = false
-        
         // animate opening of the menu - including opacity value
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -194,29 +214,71 @@ class ViewController: UIViewController {
         sideMenuLeadingConstrait.constant = (self.sideMenuLeadingConstrait.constant - self.sideMenu.frame.size.width)
         // Hide black view
         blackView.isHidden = true
-        
         // animate opening of the menu - including opacity value
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
     
+    // MARK :- Set verse number and surah number before the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "toDetailView" {
             let destinationViewController = segue.destination as? DetailController
             
             if self.searchObject.ayahNumber != 0 && self.searchObject.surahNumber != 0 {
-                destinationViewController?.ayahNumber = self.searchObject.ayahNumber
-                destinationViewController?.surahNumber = self.searchObject.surahNumber
+                destinationViewController?.searchObject = self.searchObject
             }
         }
     }
     
 }
 
-// Delegate and manage data of table view here
-extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+
+
+
+// MARK :- Delegate and manage data of table view here
+extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        let searchText = searchController.searchBar.text!
+        
+        if searchText == "" || searchText.count <= 0 {
+            // Change color to red because no result
+            self.searchResultLabel.textColor = UIColor.black
+            // Set the original text to label
+            self.searchResultLabel.text = fixedText
+            // Clean list from old results
+            resultlist.removeAll(keepingCapacity: false)
+            resultTable.reloadData()
+        } else {
+            // Keep the query text
+            self.searchQuery = searchText
+            // Clean the list for staying away from duplicate elements thats remain from old result
+            resultlist.removeAll(keepingCapacity: false)
+            
+            // Initialize spinner (MBHUD)
+            spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
+            // Change some properties of spinner
+            spinnerActivity?.label.text = "جاري البحث"
+            spinnerActivity?.isUserInteractionEnabled = true
+            self.data.findByWord(query: searchText) { (resultArray) in
+                // Add result list that coming from search result to local result list
+                self.resultlist = resultArray
+                // Change some property of text label
+                self.searchResultLabel.textColor = self.darkGreen
+                let numberAsString = String(self.resultlist.count)
+                self.searchResultLabel.text = "تم العثور على \(numberAsString.replaceEnglishDigitsWithArabic) أية"
+            }
+            
+            // Table populated now and lets to animate cells
+            animations.animateTableCells(table: self.resultTable)
+            
+            self.spinnerActivity?.hide(animated: true, afterDelay: 1.0)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -268,20 +330,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         if tableView == self.resultTable {
             data.findByWordWithIndex(query: searchQuery, selectedIndex: indexPath.row) { (searchObj) in
                 self.searchObject = searchObj
-                // Perform seguae
-                self.performSegue(withIdentifier: "toDetailView", sender: self)
             }
+            // Perform seguae
+            self.performSegue(withIdentifier: "toDetailView", sender: self)
+            
         } else if tableView == self.sideMenuTableView {
             let index = indexPath.item
             switch index {
             case 0:
                 performSegue(withIdentifier: "toQuranComplete", sender: self)
+                hideMenu()
+                menuIsShown = !menuIsShown
                 break
             case 1:
                 performSegue(withIdentifier: "toFeedbackPage", sender: self)
+                hideMenu()
+                menuIsShown = !menuIsShown
                 break
             case 2:
                 performSegue(withIdentifier: "toAboutPage", sender: self)
+                hideMenu()
+                menuIsShown = !menuIsShown
                 break
             default:
                 print("Table cannot include more than 4 rows!")
@@ -289,48 +358,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         }
     }
     
-    // Do search
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText == "" || searchText.count <= 0 {
-            // Change color to red because no result
-            self.searchResultLabel.textColor = UIColor.black
-            // Set the original text to label
-            self.searchResultLabel.text = fixedText
-            // Clean list from old results
-            resultlist.removeAll(keepingCapacity: false)
-            resultTable.reloadData()
-        } else {
-            // Keep the query text
-            self.searchQuery = searchText
-            // Clean the list for staying away from duplicate elements thats remain from old result
-            resultlist.removeAll(keepingCapacity: false)
-            
-            // Initialize spinner (MBHUD)
-            spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
-            // Change some properties of spinner
-            spinnerActivity?.label.text = "جاري البحث"
-            spinnerActivity?.isUserInteractionEnabled = true
-            self.data.findByWord(query: searchText) { (resultArray) in
-                // Add result list that coming from search result to local result list
-                self.resultlist = resultArray
-                // Change some property of text label
-                self.searchResultLabel.textColor = self.darkGreen
-                let numberAsString = String(self.resultlist.count)
-                self.searchResultLabel.text = "تم العثور على \(numberAsString.replaceEnglishDigitsWithArabic) أية"
-            }
-            
-            // Table populated now and lets to animate cells
-            animations.animateTableCells(table: self.resultTable)
-            
-            self.spinnerActivity?.hide(animated: true, afterDelay: 1.0)
-        }
-    }
-    
     // Hide keyboard methods
     // 1- When the scroll starts
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.searchbar.endEditing(true)
+        searchQuery = ""
+        self.searchController.searchBar.endEditing(true)
     }
     
     // When the seach button pressed
@@ -341,12 +373,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 defaults.saveHistoryList(list: searchKeywords)
             }
         }
-        self.searchbar.endEditing(true)
+        searchQuery = ""
+        self.searchController.searchBar.endEditing(true)
     }
     
     // Hide keyboard when cancel button pressed
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)
+        searchQuery = ""
+        self.searchController.searchBar.endEditing(true)
         self.view.endEditing(true)
     }
     

@@ -21,8 +21,6 @@ class FeedbackController: UIViewController, MFMailComposeViewControllerDelegate 
         super.viewDidLoad()
         self.sendButton.layer.cornerRadius = 5
         
-        // Add motion effect
-        backgroundWallpaper.moveViaMotionEffect()
     }
 
     

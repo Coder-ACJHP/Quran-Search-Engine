@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class DetailController: UIViewController {
 
     
-    var ayahNumber: Int?
-    var surahNumber: Int?
+    // Entity object
+    var searchObject = SearchResultObj()
     let service = ServiceData.shared
+    // Create animated indicator instance
+    var spinnerActivity: MBProgressHUD?
     @IBOutlet weak var ayahNumberLabel: UILabel!
     @IBOutlet weak var ayahtextLabel: UITextView!
     @IBOutlet weak var surahNumberlabel: UILabel!
@@ -25,15 +28,18 @@ class DetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add motion effect
-        backgroundWallpaper.moveViaMotionEffect()
-        
         loadData()
      }
 
     fileprivate func loadData() {
-            
-        service.findOthmaniAyahTextById(ayahNumber: self.ayahNumber!, surahNumber: self.surahNumber!) { (resultObj) in
+        
+        // Initialize spinner (MBHUD)
+        spinnerActivity = MBProgressHUD.showAdded(to: self.view, animated: true);
+        // Change some properties of spinner
+        spinnerActivity?.label.text = "جاري البحث"
+        spinnerActivity?.isUserInteractionEnabled = true
+        
+        service.findOthmaniAyahTextById(ayahNumber: searchObject.ayahNumber, surahNumber: searchObject.surahNumber) { (resultObj) in
                     
             self.ayahNumberLabel.text = String(resultObj.ayahNumber).replaceEnglishDigitsWithArabic
             self.ayahtextLabel.text = resultObj.ayahText
@@ -47,6 +53,8 @@ class DetailController: UIViewController {
             }
             
         }
+        // Hide spinner
+        self.spinnerActivity?.hide(animated: true, afterDelay: 1.0)
     }
     
     @IBAction func closePressed(_ sender: UIBarButtonItem) {
@@ -57,9 +65,10 @@ class DetailController: UIViewController {
         
         let verse = self.ayahtextLabel.text
         
-        let optionMenu = UIAlertController(title: nil, message: "Choose option", preferredStyle: UIAlertControllerStyle.actionSheet)
-        let copyToClipboard = UIAlertAction(title: "نسخ إلى الحافظة", style: UIAlertActionStyle.default) { (action) in
+        let optionMenu = UIAlertController(title: nil, message: "خيارات", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let copyToClipboard = UIAlertAction(title: "نسخ إلى الحافظة", style: UIAlertActionStyle.default) { (_) in
             UIPasteboard.general.string = verse
+            self.showMessage(message: "تم النسخ الأية إلى الحافظة بنجاح")
         }
         let shareTheVerse = UIAlertAction(title: "شارك الآية", style: UIAlertActionStyle.default) { (action) in
             
@@ -76,5 +85,14 @@ class DetailController: UIViewController {
         optionMenu.addAction(cancel)
         
         self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    private func showMessage(message: String) {
+        let alert = UIAlertController(title: "تم", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertAction = UIAlertAction(title: "تخطي", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
