@@ -365,7 +365,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         self.searchController.searchBar.endEditing(true)
     }
     
-    // When the seach button pressed
+    // When the search button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchQuery != "" && searchQuery.count >= 3 {
             if !searchKeywords.contains(searchQuery) {
@@ -373,7 +373,6 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 defaults.saveHistoryList(list: searchKeywords)
             }
         }
-        searchQuery = ""
         self.searchController.searchBar.endEditing(true)
     }
     
