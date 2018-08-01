@@ -25,10 +25,7 @@ class AboutAppController: UIViewController {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             self.versionLabel.text = version
         }
-        
-        webView.layer.cornerRadius = 8
-        webView.layer.borderWidth = 3
-        webView.layer.borderColor = UIColor.gray.cgColor
+    
         webView.isHidden = true
     }
 
@@ -72,8 +69,7 @@ class AboutAppController: UIViewController {
         spinnerActivity?.label.text = "يرجى الأنتظار"
         spinnerActivity?.isUserInteractionEnabled = true
         let url = Bundle.main.url(forResource: pageName, withExtension: "html")
-        let request = URLRequest(url: url!)
-        webView.load(request)
+        webView.loadFileURL(url!, allowingReadAccessTo: url!)
         self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
     }
 }

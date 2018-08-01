@@ -22,6 +22,7 @@ class MainController: UIViewController {
     @IBOutlet var tableViewBackground: UIView!
     @IBOutlet weak var tableAlert: UIView!
     @IBOutlet weak var tableAlertBackground: UIImageView!
+    @IBOutlet weak var tableEmptyView: UIView!
     
     var fixedText = ""
     var searchQuery = ""
@@ -78,6 +79,7 @@ class MainController: UIViewController {
         setupDelegatesAndDatasources()
         
         setupEmptyTableViewAlert()
+        
     }
     
     private func getSearchedKeywordHistory() {
@@ -111,6 +113,8 @@ class MainController: UIViewController {
         tableViewBackground.topAnchor.constraint(equalTo: self.view.topAnchor, constant: searchbarHeight).isActive = true
         tableViewBackground.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -34).isActive = true
         tableViewBackground.isHidden = true
+        
+        hideKeyboardWhentapOnEmptyView()
     }
     
     fileprivate func setupDelegatesAndDatasources() {
@@ -361,7 +365,6 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     // Hide keyboard methods
     // 1- When the scroll starts
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        searchQuery = ""
         self.searchController.searchBar.endEditing(true)
     }
     
@@ -378,15 +381,17 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
     
     // Hide keyboard when cancel button pressed
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchQuery = ""
         self.searchController.searchBar.endEditing(true)
         self.view.endEditing(true)
     }
     
+    func hideKeyboardWhentapOnEmptyView() {
+        tableEmptyView.isUserInteractionEnabled = true
+        tableEmptyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap)))
+    }
     
+    @objc private func handleTap() {
+        self.searchController.searchBar.endEditing(true)
+        self.view.endEditing(true)
+    }
 }
-
-
-
-
-
