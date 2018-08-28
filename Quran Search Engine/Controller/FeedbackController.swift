@@ -26,7 +26,7 @@ class FeedbackController: UIViewController {
         super.viewDidLoad()
         
         handleKeyboardDismiss()
-        
+        giveRadiusToComponents()
         issueNameField.addTarget(self, action: #selector(FeedbackController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         issueDetailField.addTarget(self, action: #selector(FeedbackController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         
@@ -34,6 +34,12 @@ class FeedbackController: UIViewController {
 
     @objc func textFieldDidChange(_ textField: UITextField) {
         validateFields()
+    }
+    
+    private func giveRadiusToComponents() {
+        self.issueNameField.layer.cornerRadius = 3.0
+        self.issueDetailField.layer.cornerRadius = 3.0
+        self.sendButton.layer.cornerRadius = 3.0
     }
     
     private func validateFields() {
@@ -74,7 +80,9 @@ class FeedbackController: UIViewController {
     
     
     @objc func sendButtonPressed(_ sender: Any) {
-        sendEmail(subject: issueNameFieldTrimmed, detail: issueDetailFieldTrimmed)
+        if sendButton.backgroundColor == blueColor {
+            sendEmail(subject: issueNameFieldTrimmed, detail: issueDetailFieldTrimmed)
+        }
         // Hide the keyboard
         self.view.endEditing(true)
     }

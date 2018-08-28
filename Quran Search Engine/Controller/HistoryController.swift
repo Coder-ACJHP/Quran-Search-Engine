@@ -95,6 +95,7 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             historyList.remove(at: indexPath.row)
             defaults.saveHistoryList(list: historyList)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.reloadData()
         }
     }

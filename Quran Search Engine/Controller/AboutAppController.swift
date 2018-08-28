@@ -21,6 +21,8 @@ class AboutAppController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        webView.navigationDelegate = self
+        
         // Get application version number and show it on label
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             self.versionLabel.text = version
@@ -70,6 +72,19 @@ class AboutAppController: UIViewController {
         spinnerActivity?.isUserInteractionEnabled = true
         let url = Bundle.main.url(forResource: pageName, withExtension: "html")
         webView.loadFileURL(url!, allowingReadAccessTo: url!)
-        self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
     }
 }
+
+extension AboutAppController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        self.spinnerActivity?.show(animated: true)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.spinnerActivity?.hide(animated: true)
+    }
+}
+
+
+

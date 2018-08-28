@@ -10,6 +10,8 @@ import UIKit
 
 class ResultTableCell: UITableViewCell {
     
+    @IBOutlet weak var surahNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

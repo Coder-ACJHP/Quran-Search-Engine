@@ -324,6 +324,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
             //resultCell?.textLabel?.text = resultlist[indexPath.row]
             let resultLine = resultlist[indexPath.row]
             resultCell?.textLabel?.chageColorOfText(lineOfText: resultLine, text: searchQuery, color: UIColor.red)
+            resultCell?.surahNameLabel.text = "\(searchObject.ayahNumber) رقم الأية | \(searchObject.surahName) سورة" ??
             return resultCell!
         }
 

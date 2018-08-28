@@ -14,7 +14,7 @@ class HistoryCell: UITableViewCell {
         super.awakeFromNib()
         
         textLabel?.textColor = UIColor.gray
-        textLabel?.font = UIFont(name: "DamascusMedium", size: 20)
+        textLabel?.font = UIFont(name: "DamascusMedium", size: 22)
         textLabel?.textAlignment = .left
     }
 

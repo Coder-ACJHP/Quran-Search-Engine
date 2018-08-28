@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-bg-XaO" userLabel="SideMenu">
-                                <rect key="frame" x="-240" y="64" width="240" height="504"/>
+                                <rect key="frame" x="-240" y="20" width="240" height="548"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-DW-4jm">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftT-mC-S2y">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o4s-Vn-15W">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-u0-4C5">
@@ -69,9 +69,9 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbY-Au-Imf">
-                                                                        <rect key="frame" x="76" y="5" width="148" height="30"/>
+                                                                        <rect key="frame" x="76" y="7" width="148" height="30"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="148" id="iNE-Q7-c0R"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="148" id="iNE-Q7-c0R"/>
                                                                             <constraint firstAttribute="height" constant="30" id="mpe-0c-C9V"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="20"/>
@@ -92,8 +92,9 @@
                                                                     <constraint firstAttribute="bottom" secondItem="cKx-MF-k6I" secondAttribute="bottom" constant="4" id="KIy-xz-4be"/>
                                                                     <constraint firstAttribute="trailing" secondItem="cKx-MF-k6I" secondAttribute="trailing" constant="9" id="Ng9-OS-BPz"/>
                                                                     <constraint firstItem="cKx-MF-k6I" firstAttribute="leading" secondItem="euY-oV-sXB" secondAttribute="leading" constant="9" id="ZSj-Lt-49t"/>
-                                                                    <constraint firstItem="LbY-Au-Imf" firstAttribute="top" secondItem="euY-oV-sXB" secondAttribute="top" constant="5" id="a4i-ah-Wxw"/>
+                                                                    <constraint firstItem="LbY-Au-Imf" firstAttribute="top" secondItem="euY-oV-sXB" secondAttribute="top" constant="7" id="a4i-ah-Wxw"/>
                                                                     <constraint firstItem="OkM-73-N7M" firstAttribute="top" secondItem="euY-oV-sXB" secondAttribute="top" constant="5" id="bII-J4-8k8"/>
+                                                                    <constraint firstItem="LbY-Au-Imf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="euY-oV-sXB" secondAttribute="leading" constant="20" symbolic="YES" id="eYX-Rq-6q8"/>
                                                                     <constraint firstAttribute="trailing" secondItem="LbY-Au-Imf" secondAttribute="trailing" constant="16" id="y3H-bw-TKN"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
@@ -134,7 +135,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zkK-Te-CIq">
-                                <rect key="frame" x="0.0" y="64" width="320" height="469"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
@@ -144,7 +145,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQe-J3-Ov9" id="7WL-ad-i7t">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="101.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سورة رعد | أية رقم ٤٥" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Clo-ff-qdP">
+                                                    <rect key="frame" x="9" y="70" width="123" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="17"/>
+                                                    <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="surahNameLabel" destination="Clo-ff-qdP" id="QzM-8f-pDc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -257,7 +270,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKA-ZZ-GdR">
-                                    <rect key="frame" x="59" y="202.5" width="202" height="163"/>
+                                    <rect key="frame" x="59" y="178" width="202" height="163"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speech-bubble" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-8T-rdD">
                                             <rect key="frame" x="0.0" y="0.0" width="202" height="163"/>
@@ -308,7 +321,7 @@
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstItem="GKA-ZZ-GdR" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="C44-BO-bHn"/>
-                                <constraint firstItem="GKA-ZZ-GdR" firstAttribute="centerY" secondItem="ZE7-wm-Iwd" secondAttribute="centerY" id="H0E-aa-fii"/>
+                                <constraint firstItem="GKA-ZZ-GdR" firstAttribute="centerY" secondItem="ZE7-wm-Iwd" secondAttribute="centerY" constant="-24.5" id="H0E-aa-fii"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -326,7 +339,7 @@
                     <viewLayoutGuide key="safeArea" id="sqk-PX-k8C"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="650" y="783"/>
+            <point key="canvasLocation" x="648.75" y="782.74647887323943"/>
         </scene>
         <!--سجل البحث-->
         <scene sceneID="JaP-iA-8Sl">
@@ -337,7 +350,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yex-FW-gaJ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
@@ -414,7 +427,7 @@
                     <viewLayoutGuide key="safeArea" id="ARb-8o-Zlc"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1622" y="379"/>
+            <point key="canvasLocation" x="1641" y="294"/>
         </scene>
         <!--سورة كاملة-->
         <scene sceneID="JhH-Gf-Kdc">
@@ -425,24 +438,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="INm-Hw-c1R">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBj-T7-kJb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kS-jg-9Dt">
-                                        <rect key="frame" x="16" y="61" width="288" height="404"/>
+                                        <rect key="frame" x="16" y="61" width="288" height="448"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <string key="content">مَا يَوَدُّ الَّذِينَ كَفَرُوا مِنْ أَهْلِ الْكِتَابِ وَلَا الْمُشْرِكِينَ أَنْ يُنَزَّلَ عَلَيْكُمْ مِنْ خَيْرٍ مِنْ رَبِّكُمْ ۗ وَاللَّهُ يَخْتَصُّ بِرَحْمَتِهِ مَنْ يَشَاءُ ۚ وَاللَّهُ ذُو الْفَضْلِ الْعَظِيمِ</string>
-                                                <attributes>
-                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="rightToLeft" lineSpacing="5" firstLineHeadIndent="1" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7f-HV-JWf">
@@ -462,7 +466,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-2D-wA5">
-                                        <rect key="frame" x="290" y="464" width="30" height="30"/>
+                                        <rect key="frame" x="290" y="508" width="30" height="30"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="dot-menu">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -472,7 +476,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK4-RY-qAx">
-                                        <rect key="frame" x="-47" y="469" width="337" height="25"/>
+                                        <rect key="frame" x="-47" y="513" width="337" height="25"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0" maxValue="1" minimumValueImage="light" maximumValueImage="dark" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-o0-D9r" customClass="DesignableUISlider" customModule="Quran_Search_Engine" customModuleProvider="target">
                                                 <rect key="frame" x="-2" y="0.0" width="139" height="26"/>
@@ -566,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2Q-wI-qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="2358"/>
+            <point key="canvasLocation" x="124" y="2410"/>
         </scene>
         <!--الفهرس-->
         <scene sceneID="YY1-c5-26h">
@@ -577,7 +581,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-5B-QUO">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="surahCell" rowHeight="68" id="cqS-11-QQG" customClass="SearchCell" customModule="Quran_Search_Engine" customModuleProvider="target">
@@ -595,16 +599,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="190" id="gTP-GH-gwo"/>
                                                             </constraints>
-                                                            <attributedString key="attributedText">
-                                                                <fragment content="الفاتحة">
-                                                                    <attributes>
-                                                                        <color key="NSBackgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <color key="NSColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <font key="NSFont" size="20" name="DamascusBold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="rightToLeft" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
+                                                            <attributedString key="attributedText"/>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
@@ -674,7 +669,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="806-Fs-GZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="1615.1408450704225"/>
+            <point key="canvasLocation" x="124" y="1653"/>
         </scene>
         <!--عن التطبيق-->
         <scene sceneID="05t-iN-FZx">
@@ -685,10 +680,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-cs-V5z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="1044"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9u-Rs-5xl">
-                                <rect key="frame" x="1" y="64" width="373" height="936"/>
+                                <rect key="frame" x="1" y="20" width="373" height="980"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="auA-a1-vuG">
                                         <rect key="frame" x="136.5" y="57" width="100" height="100"/>
@@ -814,7 +809,7 @@
                                             <constraint firstAttribute="height" constant="112" id="Cbr-i3-RI0"/>
                                         </constraints>
                                         <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO">
-                                            <dataDetectorTypes key="dataDetectorTypes"/>
+                                            <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
@@ -903,7 +898,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXl-I4-llK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="1831"/>
+            <point key="canvasLocation" x="651" y="1869"/>
         </scene>
         <!--بلغنا عن المشكلة-->
         <scene sceneID="A15-D0-Kte">
@@ -914,10 +909,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-7s-b9v" userLabel="bg-wallpaper">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Jh-Uzz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-zJ-5Ex" customClass="TextField" customModule="Quran_Search_Engine" customModuleProvider="target">
                                         <rect key="frame" x="16" y="195" width="288" height="36"/>
@@ -1020,7 +1015,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSM-SZ-otu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1132" y="1615"/>
+            <point key="canvasLocation" x="1126" y="1653"/>
         </scene>
         <!--تفاصيل البحث-->
         <scene sceneID="45W-VD-LMg">
@@ -1031,10 +1026,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-3S-ZSK">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-rx-dyT">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم السورة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS1-Jf-lcx">
                                         <rect key="frame" x="194" y="120" width="110" height="40"/>
@@ -1138,7 +1133,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9Y-l6-w8v">
-                                        <rect key="frame" x="16" y="371" width="288" height="121"/>
+                                        <rect key="frame" x="16" y="371" width="288" height="165"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -1253,7 +1248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejr-xw-Pmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="1146"/>
+            <point key="canvasLocation" x="1641" y="1049"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ef-Fv-9qu">
@@ -1290,6 +1285,7 @@
         <image name="tip" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gsw-pt-ySs"/>
+        <segue reference="Afg-jg-qFZ"/>
+        <segue reference="8Uf-tg-6bv"/>
     </inferredMetricsTieBreakers>
 </document>
