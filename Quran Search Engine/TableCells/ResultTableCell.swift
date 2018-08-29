@@ -11,13 +11,15 @@ import UIKit
 class ResultTableCell: UITableViewCell {
     
     @IBOutlet weak var surahNameLabel: UILabel!
+    @IBOutlet weak var numberOfVerseLabel: UILabel!
+    @IBOutlet weak var VerseTextLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.textLabel?.numberOfLines = 2
-        self.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        self.textLabel?.textAlignment = .right
+        self.VerseTextLabel.numberOfLines = 2
+        self.VerseTextLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        self.VerseTextLabel.textAlignment = .right
     }
     
 }
@@ -35,6 +37,7 @@ extension NSMutableAttributedString {
     func setColorForText(textForAttribute: String, withColor color: UIColor) {
         let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
         self.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
-        self.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: 17.0), range: range)
+        let usedFont = UIFont(name: "Damascus", size: 19.0)
+        self.addAttribute(NSAttributedStringKey.font, value: usedFont!, range: range)
     }
 }

@@ -20,7 +20,6 @@ class MainController: UIViewController {
     @IBOutlet weak var searchResultView: UIVisualEffectView!
     @IBOutlet weak var roundedBgForresultLabel: UIView!
     @IBOutlet var tableViewBackground: UIView!
-    @IBOutlet weak var tableAlert: UIView!
     @IBOutlet weak var tableAlertBackground: UIImageView!
     @IBOutlet weak var tableEmptyView: UIView!
     
@@ -40,9 +39,9 @@ class MainController: UIViewController {
     // New Searchbar
     var searchController: UISearchController!
     // Set custom color
-    let darkGreen = UIColor(red:0.00, green:0.57, blue:0.54, alpha:1.0)
+    let customGreen = UIColor.init(red: 99 / 255, green: 155 / 255, blue: 177 / 255, alpha: 1.0)
     // Search result will collect here
-    var resultlist = [String]()
+    var resultlist = [SearchResultObj]()
     // Searched keywords will collect here
     var searchKeywords = [String]()
     
@@ -61,6 +60,8 @@ class MainController: UIViewController {
         super.viewDidLoad()
         
         setupBlackShadowView()
+        // Add logo image to navbar title view
+        setupNavbarLogo()
         // Get default text for label
         fixedText = searchResultLabel.text!
         // Add border to result label holder
@@ -84,6 +85,13 @@ class MainController: UIViewController {
     
     private func getSearchedKeywordHistory() {
         searchKeywords = defaults.getHistoryList()
+    }
+    
+    fileprivate func setupNavbarLogo() {
+        let logoView = UIImageView(image: UIImage(named: "App-logo"))
+        logoView.contentMode = .scaleToFill
+        logoView.clipsToBounds = true
+        self.navigationItem.titleView = logoView
     }
     
     fileprivate func setupBlackShadowView() {
@@ -151,10 +159,7 @@ class MainController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        // Animate empty table alert
-        tableAlert.animateMe()
-        
+                
         if searchQuery != "" {
             searchController.searchBar.text = searchQuery
         }
@@ -271,7 +276,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 // Add result list that coming from search result to local result list
                 self.resultlist = resultArray
                 // Change some property of text label
-                self.searchResultLabel.textColor = self.darkGreen
+                self.searchResultLabel.textColor = self.customGreen
                 let numberAsString = String(self.resultlist.count)
                 self.searchResultLabel.text = "تم العثور على \(numberAsString.replaceEnglishDigitsWithArabic) أية"
             }
@@ -322,9 +327,10 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
             
             resultCell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as? ResultTableCell
             //resultCell?.textLabel?.text = resultlist[indexPath.row]
-            let resultLine = resultlist[indexPath.row]
-            resultCell?.textLabel?.chageColorOfText(lineOfText: resultLine, text: searchQuery, color: UIColor.red)
-            resultCell?.surahNameLabel.text = "\(searchObject.ayahNumber) رقم الأية | \(searchObject.surahName) سورة" ??
+            let resultLine = resultlist[indexPath.row].ayahText
+            resultCell?.VerseTextLabel.chageColorOfText(lineOfText: resultLine, text: searchQuery, color: UIColor.red)
+            resultCell?.surahNameLabel.text = "\(resultlist[indexPath.row].surahNumber)".replaceEnglishDigitsWithArabic
+            resultCell?.numberOfVerseLabel.text = "\(resultlist[indexPath.row].ayahNumber)".replaceEnglishDigitsWithArabic
             return resultCell!
         }
 

@@ -23,15 +23,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYj-hR-Ked">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 Coder ACJHP All Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-oo-q3n">
-                                        <rect key="frame" x="16" y="547" width="288" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="r8W-Gn-pH3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="11"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محرك البحث القرآني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDQ-JY-Zjx">
                                         <rect key="frame" x="56.5" y="316" width="207" height="29"/>
                                         <constraints>
@@ -57,6 +48,15 @@
                                         <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 Coder ACJHP All Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-oo-q3n">
+                                        <rect key="frame" x="16" y="532" width="288" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="r8W-Gn-pH3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="11"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -68,19 +68,19 @@
                                     <constraint firstItem="qDQ-JY-Zjx" firstAttribute="centerX" secondItem="Vhg-Ct-SdA" secondAttribute="centerX" id="af4-xp-lP6"/>
                                     <constraint firstItem="H8S-Ne-WG0" firstAttribute="top" secondItem="qDQ-JY-Zjx" secondAttribute="bottom" constant="8" id="fVB-gy-sVx"/>
                                     <constraint firstItem="Vhg-Ct-SdA" firstAttribute="centerX" secondItem="lYj-hR-Ked" secondAttribute="centerX" id="gSD-Oz-OWq"/>
-                                    <constraint firstAttribute="bottom" secondItem="rDb-oo-q3n" secondAttribute="bottom" id="ylI-I6-myx"/>
+                                    <constraint firstAttribute="bottom" secondItem="rDb-oo-q3n" secondAttribute="bottom" constant="15" id="ylI-I6-myx"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oei-pY-REm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6Od-nE-WuQ"/>
-                            <constraint firstItem="lYj-hR-Ked" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="C5u-St-ZMX"/>
+                            <constraint firstItem="lYj-hR-Ked" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="C5u-St-ZMX"/>
                             <constraint firstItem="lYj-hR-Ked" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MO3-zL-AeE"/>
                             <constraint firstItem="oei-pY-REm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yb9-gb-g8D"/>
                             <constraint firstItem="lYj-hR-Ked" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZZF-HL-2Tk"/>
                             <constraint firstItem="lYj-hR-Ked" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a9d-aw-eDE"/>
-                            <constraint firstItem="oei-pY-REm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bb5-4e-TDH"/>
+                            <constraint firstItem="oei-pY-REm" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="bb5-4e-TDH"/>
                             <constraint firstItem="oei-pY-REm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xvG-k7-WqJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

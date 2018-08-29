@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ابحث عن اية-->
+        <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainController" customModule="Quran_Search_Engine" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-bg-XaO" userLabel="SideMenu">
-                                <rect key="frame" x="-240" y="20" width="240" height="548"/>
+                                <rect key="frame" x="-240" y="64" width="240" height="504"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-DW-4jm">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftT-mC-S2y">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o4s-Vn-15W">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-u0-4C5">
@@ -62,10 +62,10 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OkM-73-N7M">
-                                                                        <rect key="frame" x="16" y="5" width="30" height="30"/>
+                                                                        <rect key="frame" x="16" y="8" width="25" height="25"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="fQg-x0-RA9"/>
-                                                                            <constraint firstAttribute="width" constant="30" id="gNK-dQ-PDf"/>
+                                                                            <constraint firstAttribute="height" constant="25" id="fQg-x0-RA9"/>
+                                                                            <constraint firstAttribute="width" constant="25" id="gNK-dQ-PDf"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbY-Au-Imf">
@@ -93,7 +93,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="cKx-MF-k6I" secondAttribute="trailing" constant="9" id="Ng9-OS-BPz"/>
                                                                     <constraint firstItem="cKx-MF-k6I" firstAttribute="leading" secondItem="euY-oV-sXB" secondAttribute="leading" constant="9" id="ZSj-Lt-49t"/>
                                                                     <constraint firstItem="LbY-Au-Imf" firstAttribute="top" secondItem="euY-oV-sXB" secondAttribute="top" constant="7" id="a4i-ah-Wxw"/>
-                                                                    <constraint firstItem="OkM-73-N7M" firstAttribute="top" secondItem="euY-oV-sXB" secondAttribute="top" constant="5" id="bII-J4-8k8"/>
+                                                                    <constraint firstItem="OkM-73-N7M" firstAttribute="top" secondItem="euY-oV-sXB" secondAttribute="top" constant="8" id="bII-J4-8k8"/>
                                                                     <constraint firstItem="LbY-Au-Imf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="euY-oV-sXB" secondAttribute="leading" constant="20" symbolic="YES" id="eYX-Rq-6q8"/>
                                                                     <constraint firstAttribute="trailing" secondItem="LbY-Au-Imf" secondAttribute="trailing" constant="16" id="y3H-bw-TKN"/>
                                                                 </constraints>
@@ -134,29 +134,81 @@
                                     <constraint firstItem="9v0-DW-4jm" firstAttribute="leading" secondItem="bgn-bg-XaO" secondAttribute="leading" id="zg0-rl-U0R"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zkK-Te-CIq">
-                                <rect key="frame" x="0.0" y="20" width="320" height="513"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zkK-Te-CIq">
+                                <rect key="frame" x="0.0" y="64" width="320" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCell" rowHeight="102" id="uQe-J3-Ov9" customClass="ResultTableCell" customModule="Quran_Search_Engine" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="102"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultCell" rowHeight="74" id="uQe-J3-Ov9" customClass="ResultTableCell" customModule="Quran_Search_Engine" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="74"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQe-J3-Ov9" id="7WL-ad-i7t">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="101.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="74"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سورة رعد | أية رقم ٤٥" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Clo-ff-qdP">
-                                                    <rect key="frame" x="9" y="70" width="123" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="17"/>
-                                                    <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL4-Us-z20" userLabel="Result Detail Container">
+                                                    <rect key="frame" x="0.0" y="54" width="287" height="20"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="رقم السورة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mch-Sl-cHD">
+                                                            <rect key="frame" x="222" y="4" width="62" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="١٢" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qES-Pj-mJQ">
+                                                            <rect key="frame" x="180" y="4" width="35" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="15"/>
+                                                            <color key="textColor" red="0.9882352941176471" green="0.20784313725490197" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="رقم الاية :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTP-3k-doU">
+                                                            <rect key="frame" x="121" y="4" width="51" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="١٢" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1o-9b-CaP">
+                                                            <rect key="frame" x="78" y="4" width="35" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="15"/>
+                                                            <color key="textColor" red="0.9882352941176471" green="0.20784313725490197" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="ghZ-jy-fwP"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شكرا لك على استخدام التطبيق القرآن المجيد. نحن نحاول باستمرار تحسين وتحديث التطبيق لتعطيك أفضل تجربة القرآن" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N5m-a6-Qwu">
+                                                    <rect key="frame" x="7" y="0.0" width="272" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="TUp-7p-HAf"/>
+                                                        <constraint firstAttribute="height" constant="54" id="X8e-sz-mox"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="16"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="RL4-Us-z20" secondAttribute="bottom" id="Jki-on-bjK"/>
+                                                <constraint firstItem="N5m-a6-Qwu" firstAttribute="top" secondItem="7WL-ad-i7t" secondAttribute="top" id="QkF-WB-RQ4"/>
+                                                <constraint firstItem="RL4-Us-z20" firstAttribute="top" secondItem="N5m-a6-Qwu" secondAttribute="bottom" id="WYP-Vn-iYK"/>
+                                                <constraint firstAttribute="trailing" secondItem="RL4-Us-z20" secondAttribute="trailing" id="aHL-aT-c6m"/>
+                                                <constraint firstItem="RL4-Us-z20" firstAttribute="leading" secondItem="7WL-ad-i7t" secondAttribute="leading" id="fZs-6L-OAj"/>
+                                                <constraint firstAttribute="trailing" secondItem="N5m-a6-Qwu" secondAttribute="trailing" constant="8" id="kyJ-WK-tgh"/>
+                                                <constraint firstItem="RL4-Us-z20" firstAttribute="top" secondItem="N5m-a6-Qwu" secondAttribute="bottom" id="ll3-q6-dbO"/>
+                                                <constraint firstItem="N5m-a6-Qwu" firstAttribute="leading" secondItem="7WL-ad-i7t" secondAttribute="leading" constant="7" id="rJB-Me-Onx"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="surahNameLabel" destination="Clo-ff-qdP" id="QzM-8f-pDc"/>
+                                            <outlet property="VerseTextLabel" destination="N5m-a6-Qwu" id="vE5-nx-2aY"/>
+                                            <outlet property="numberOfVerseLabel" destination="T1o-9b-CaP" id="MPj-Yp-PG2"/>
+                                            <outlet property="surahNameLabel" destination="qES-Pj-mJQ" id="sam-Dr-Pkx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -171,30 +223,30 @@
                                             <rect key="frame" x="8" y="8" width="304" height="19"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="نتيجة البحث :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk7-uY-kFD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="301" height="18"/>
+                                                    <rect key="frame" x="0.0" y="3" width="301" height="17"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="17"/>
+                                                    <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لم يتم البحث" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nec-lj-OaX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="224" height="17"/>
+                                                    <rect key="frame" x="0.0" y="6" width="224" height="11"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="lk7-uY-kFD" firstAttribute="top" secondItem="aBQ-Dn-LQJ" secondAttribute="top" id="8Nu-J7-Sjp"/>
+                                                <constraint firstItem="lk7-uY-kFD" firstAttribute="top" secondItem="aBQ-Dn-LQJ" secondAttribute="top" constant="3" id="8Nu-J7-Sjp"/>
                                                 <constraint firstAttribute="trailing" secondItem="lk7-uY-kFD" secondAttribute="trailing" constant="3" id="8iP-qh-h6k"/>
                                                 <constraint firstAttribute="bottom" secondItem="Nec-lj-OaX" secondAttribute="bottom" constant="2" id="Cs4-UC-l5I"/>
                                                 <constraint firstItem="Nec-lj-OaX" firstAttribute="leading" secondItem="aBQ-Dn-LQJ" secondAttribute="leading" id="Gyy-EE-zEh"/>
                                                 <constraint firstItem="lk7-uY-kFD" firstAttribute="leading" secondItem="aBQ-Dn-LQJ" secondAttribute="leading" id="ICX-JH-A0P"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Nec-lj-OaX" secondAttribute="trailing" constant="80" id="YtZ-Hr-KWI"/>
-                                                <constraint firstItem="Nec-lj-OaX" firstAttribute="top" secondItem="aBQ-Dn-LQJ" secondAttribute="top" id="nyc-pU-cPb"/>
-                                                <constraint firstAttribute="bottom" secondItem="lk7-uY-kFD" secondAttribute="bottom" constant="1" id="w8u-pZ-kWl"/>
+                                                <constraint firstItem="Nec-lj-OaX" firstAttribute="top" secondItem="aBQ-Dn-LQJ" secondAttribute="top" constant="6" id="nyc-pU-cPb"/>
+                                                <constraint firstAttribute="bottom" secondItem="lk7-uY-kFD" secondAttribute="bottom" constant="-1" id="w8u-pZ-kWl"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -205,7 +257,7 @@
                                         <constraint firstItem="aBQ-Dn-LQJ" firstAttribute="top" secondItem="Z9q-Ui-uE9" secondAttribute="top" constant="8" id="vrT-hs-cmm"/>
                                     </constraints>
                                 </view>
-                                <color key="backgroundColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="m8N-tu-dr6"/>
                                 </constraints>
@@ -227,7 +279,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ابحث عن اية" id="6Kp-Cr-Guv">
+                    <navigationItem key="navigationItem" id="6Kp-Cr-Guv">
+                        <barButtonItem key="backBarButtonItem" title="الرجوع" id="qqI-vK-6h0"/>
                         <barButtonItem key="leftBarButtonItem" image="hamburger-menu" id="8jf-UX-ylM" userLabel="Menu-button">
                             <connections>
                                 <action selector="menuButtonPressed:" destination="BYZ-38-t0r" id="hlc-9Z-eJn"/>
@@ -248,7 +301,6 @@
                         <outlet property="sideMenuButton" destination="8jf-UX-ylM" id="3af-m1-jYC"/>
                         <outlet property="sideMenuLeadingConstrait" destination="z6P-hb-tbl" id="ern-WL-bwM"/>
                         <outlet property="sideMenuTableView" destination="AMs-Fj-ED5" id="G4J-zr-eSJ"/>
-                        <outlet property="tableAlert" destination="GKA-ZZ-GdR" id="pQ0-rC-JZc"/>
                         <outlet property="tableAlertBackground" destination="Mdo-80-An3" id="5ZQ-Uw-lwk"/>
                         <outlet property="tableEmptyView" destination="ZE7-wm-Iwd" id="SYF-SJ-2KP"/>
                         <outlet property="tableViewBackground" destination="hyt-GE-Bbc" id="7ci-L8-PgF"/>
@@ -269,59 +321,38 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE7-wm-Iwd">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKA-ZZ-GdR">
-                                    <rect key="frame" x="59" y="178" width="202" height="163"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speech-bubble" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-8T-rdD">
-                                            <rect key="frame" x="0.0" y="0.0" width="202" height="163"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="du8-eO-6SX">
-                                            <rect key="frame" x="26" y="92" width="150" height="54"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="2dN-gy-afB"/>
-                                                <constraint firstAttribute="height" constant="54" id="JNt-Yy-pNc"/>
-                                            </constraints>
-                                            <attributedString key="attributedText">
-                                                <fragment content="قم بإدخال نص في حقل أعلاه لبدء البحث">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="20" name="DamascusMedium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="tip" translatesAutoresizingMaskIntoConstraints="NO" id="VOJ-2K-J4m">
-                                            <rect key="frame" x="74" y="45" width="54" height="47"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="54" id="UTv-4r-riN"/>
-                                                <constraint firstAttribute="height" constant="47" id="w0N-ad-mxR"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="list" translatesAutoresizingMaskIntoConstraints="NO" id="VOJ-2K-J4m">
+                                    <rect key="frame" x="104" y="190" width="112" height="62"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="163" id="1BU-yw-rHA"/>
-                                        <constraint firstAttribute="width" constant="202" id="5el-0y-d1x"/>
-                                        <constraint firstItem="VOJ-2K-J4m" firstAttribute="leading" secondItem="GKA-ZZ-GdR" secondAttribute="leading" constant="74" id="7cK-cL-SmN"/>
-                                        <constraint firstItem="du8-eO-6SX" firstAttribute="top" secondItem="VOJ-2K-J4m" secondAttribute="bottom" id="Gkr-f0-26r"/>
-                                        <constraint firstItem="m7k-8T-rdD" firstAttribute="top" secondItem="GKA-ZZ-GdR" secondAttribute="top" id="IaU-uE-jDo"/>
-                                        <constraint firstItem="m7k-8T-rdD" firstAttribute="leading" secondItem="GKA-ZZ-GdR" secondAttribute="leading" id="M2P-mR-fSC"/>
-                                        <constraint firstAttribute="bottom" secondItem="m7k-8T-rdD" secondAttribute="bottom" id="O4a-jI-rf0"/>
-                                        <constraint firstAttribute="trailing" secondItem="VOJ-2K-J4m" secondAttribute="trailing" constant="74" id="Pi7-ZB-ISG"/>
-                                        <constraint firstItem="VOJ-2K-J4m" firstAttribute="top" secondItem="GKA-ZZ-GdR" secondAttribute="top" constant="45" id="ZPQ-EV-8vf"/>
-                                        <constraint firstItem="du8-eO-6SX" firstAttribute="leading" secondItem="GKA-ZZ-GdR" secondAttribute="leading" constant="26" id="cLr-7I-YXU"/>
-                                        <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="du8-eO-6SX" secondAttribute="trailing" constant="26" id="eCc-mt-uyr"/>
-                                        <constraint firstAttribute="trailing" secondItem="m7k-8T-rdD" secondAttribute="trailing" id="h69-lX-R6b"/>
-                                        <constraint firstAttribute="bottom" secondItem="du8-eO-6SX" secondAttribute="bottom" constant="17" id="pe7-J7-UsX"/>
+                                        <constraint firstAttribute="height" constant="62" id="NKM-qn-kvJ"/>
+                                        <constraint firstAttribute="width" constant="112" id="y4L-NA-7sX"/>
                                     </constraints>
-                                </view>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" قائمة النتائج فارغة !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5b-1d-JeO">
+                                    <rect key="frame" x="68" y="267" width="184" height="33"/>
+                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="25"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قم بإدخال نص في حقل أعلاه لبدء البحث." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="du8-eO-6SX">
+                                    <rect key="frame" x="29" y="309" width="263" height="59"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="59" id="Wjc-Qs-ixx"/>
+                                        <constraint firstAttribute="width" constant="263" id="dGS-E0-DlE"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="22"/>
+                                    <color key="textColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74933112157534243" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
-                                <constraint firstItem="GKA-ZZ-GdR" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="C44-BO-bHn"/>
-                                <constraint firstItem="GKA-ZZ-GdR" firstAttribute="centerY" secondItem="ZE7-wm-Iwd" secondAttribute="centerY" constant="-24.5" id="H0E-aa-fii"/>
+                                <constraint firstItem="m5b-1d-JeO" firstAttribute="top" secondItem="VOJ-2K-J4m" secondAttribute="bottom" constant="15" id="36s-e9-7xI"/>
+                                <constraint firstItem="VOJ-2K-J4m" firstAttribute="top" secondItem="ZE7-wm-Iwd" secondAttribute="top" constant="190" id="78A-v5-suW"/>
+                                <constraint firstItem="du8-eO-6SX" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="SWU-Mo-loq"/>
+                                <constraint firstItem="du8-eO-6SX" firstAttribute="top" secondItem="m5b-1d-JeO" secondAttribute="bottom" constant="9" id="WF6-G5-N3X"/>
+                                <constraint firstItem="VOJ-2K-J4m" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="ceb-kR-Yao"/>
+                                <constraint firstItem="m5b-1d-JeO" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="fKC-ap-Gjb"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -350,17 +381,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yex-FW-gaJ">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" id="q93-tz-JIr" customClass="HistoryCell" customModule="Quran_Search_Engine" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" id="q93-tz-JIr" customClass="HistoryCell" customModule="Quran_Search_Engine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q93-tz-JIr" id="DhU-as-cNY">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="273" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.3411764705882353" green="0.67843137254901964" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -438,13 +470,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="INm-Hw-c1R">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBj-T7-kJb">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kS-jg-9Dt">
-                                        <rect key="frame" x="16" y="61" width="288" height="448"/>
+                                        <rect key="frame" x="16" y="61" width="288" height="404"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -466,7 +498,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-2D-wA5">
-                                        <rect key="frame" x="290" y="508" width="30" height="30"/>
+                                        <rect key="frame" x="290" y="464" width="30" height="30"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="dot-menu">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -476,7 +508,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK4-RY-qAx">
-                                        <rect key="frame" x="-47" y="513" width="337" height="25"/>
+                                        <rect key="frame" x="-47" y="469" width="337" height="25"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0" maxValue="1" minimumValueImage="light" maximumValueImage="dark" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-o0-D9r" customClass="DesignableUISlider" customModule="Quran_Search_Engine" customModuleProvider="target">
                                                 <rect key="frame" x="-2" y="0.0" width="139" height="26"/>
@@ -581,7 +613,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-5B-QUO">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="surahCell" rowHeight="68" id="cqS-11-QQG" customClass="SearchCell" customModule="Quran_Search_Engine" customModuleProvider="target">
@@ -669,7 +701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="806-Fs-GZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="1653"/>
+            <point key="canvasLocation" x="-137" y="1640"/>
         </scene>
         <!--عن التطبيق-->
         <scene sceneID="05t-iN-FZx">
@@ -680,10 +712,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-cs-V5z">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="1044"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9u-Rs-5xl">
-                                <rect key="frame" x="1" y="20" width="373" height="980"/>
+                                <rect key="frame" x="1" y="64" width="373" height="936"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="auA-a1-vuG">
                                         <rect key="frame" x="136.5" y="57" width="100" height="100"/>
@@ -909,10 +941,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-7s-b9v" userLabel="bg-wallpaper">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Jh-Uzz">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-zJ-5Ex" customClass="TextField" customModule="Quran_Search_Engine" customModuleProvider="target">
                                         <rect key="frame" x="16" y="195" width="288" height="36"/>
@@ -1015,7 +1047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSM-SZ-otu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="1653"/>
+            <point key="canvasLocation" x="1434" y="1639"/>
         </scene>
         <!--تفاصيل البحث-->
         <scene sceneID="45W-VD-LMg">
@@ -1026,10 +1058,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-3S-ZSK">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-rx-dyT">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم السورة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS1-Jf-lcx">
                                         <rect key="frame" x="194" y="120" width="110" height="40"/>
@@ -1133,7 +1165,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9Y-l6-w8v">
-                                        <rect key="frame" x="16" y="371" width="288" height="165"/>
+                                        <rect key="frame" x="16" y="371" width="288" height="121"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -1248,7 +1280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejr-xw-Pmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="1049"/>
+            <point key="canvasLocation" x="1641" y="970"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ef-Fv-9qu">
@@ -1279,13 +1311,11 @@
         <image name="islamicArt" width="256" height="256"/>
         <image name="left-arrow" width="128" height="128"/>
         <image name="light" width="16" height="16"/>
+        <image name="list" width="256" height="256"/>
         <image name="menu-inner-icon" width="80" height="80"/>
         <image name="slider-thumb" width="30" height="18"/>
-        <image name="speech-bubble" width="512" height="454"/>
-        <image name="tip" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Afg-jg-qFZ"/>
-        <segue reference="8Uf-tg-6bv"/>
+        <segue reference="gsw-pt-ySs"/>
     </inferredMetricsTieBreakers>
 </document>

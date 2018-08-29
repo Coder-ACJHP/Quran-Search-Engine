@@ -16,7 +16,7 @@ class ServiceData {
     let specialCharacters = "|1234567890"
     let arabicAlphabet = "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ء ة ئ ى إ"
     typealias FETCH_RESULT_DATA = (String) -> ()
-    typealias SEARCH_RESULT_DATA = ([String]) -> ()
+    typealias SEARCH_RESULT_DATA = ([SearchResultObj]) -> ()
     typealias SEARCH_RESULT_DATA_WITH_INDEX = (SearchResultObj) -> ()
     
     static let shared = ServiceData()
@@ -58,13 +58,29 @@ class ServiceData {
     
     func findByWord(query: String, completionHandler: @escaping SEARCH_RESULT_DATA) {
 
-        var resultList = [String]()
+        var resultList = [SearchResultObj]()
         let reader = FileReader(path: filePath)
         
         for line in reader! {
             if line.contains(query) {
+                let verse = SearchResultObj()
                 let pureArabicText = removeSpecialCharsFromString(text: line)
-                resultList.append(pureArabicText)
+//                resultList.append(pureArabicText)
+                verse.ayahText = pureArabicText
+                // First remove all text from line
+                let verseAndSurahNumber = removeTextFromString(text: line)
+                // Split numbers to get verse & surah numbers
+                let numbersArray = verseAndSurahNumber.split(separator: "|")
+                // First element is verse number
+                let surahNumber = String(numbersArray[0])
+//                resultList.surahNumber = Int(surahNumber)!
+                verse.surahNumber = Int(surahNumber)!
+                // Second is surah number
+                let ayahNumber = numbersArray[1]
+                //Get surah name from the list
+//                resultList.ayahNumber = Int(ayahNumber)!
+                verse.ayahNumber = Int(ayahNumber)!
+                resultList.append(verse)
             }
         }
         completionHandler(resultList)
