@@ -386,6 +386,10 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         self.searchController.searchBar.endEditing(true)
     }
     
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchController.searchBar.text = ""??
+    }
+    
     // Hide keyboard when cancel button pressed
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchController.searchBar.endEditing(true)

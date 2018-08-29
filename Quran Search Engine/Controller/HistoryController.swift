@@ -87,8 +87,11 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! HistoryCell
         selectedCellText = (currentCell.textLabel?.text)!
-        
         self.performSegue(withIdentifier: "toMainView", sender: nil)
+    }
+    // Erase selected cell text
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        selectedCellText = ""
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
