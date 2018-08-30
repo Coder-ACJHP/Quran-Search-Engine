@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgn-bg-XaO" userLabel="SideMenu">
-                                <rect key="frame" x="-240" y="64" width="240" height="504"/>
+                                <rect key="frame" x="-240" y="20" width="240" height="548"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-DW-4jm">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
                                     </imageView>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftT-mC-S2y">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o4s-Vn-15W">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="504"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="548"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="3mG-u0-4C5">
@@ -135,7 +135,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zkK-Te-CIq">
-                                <rect key="frame" x="0.0" y="64" width="320" height="469"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="513"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
@@ -329,18 +329,18 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" قائمة النتائج فارغة !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5b-1d-JeO">
-                                    <rect key="frame" x="68.5" y="267" width="183.5" height="33"/>
-                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="25"/>
+                                    <rect key="frame" x="81.5" y="267" width="157.5" height="25"/>
+                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="25"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="قم بإدخال نص في حقل أعلاه لبدء البحث." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="du8-eO-6SX">
-                                    <rect key="frame" x="29" y="309" width="263" height="59"/>
+                                    <rect key="frame" x="40" y="300" width="241" height="49"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="59" id="Wjc-Qs-ixx"/>
-                                        <constraint firstAttribute="width" constant="263" id="dGS-E0-DlE"/>
+                                        <constraint firstAttribute="height" constant="49" id="Wjc-Qs-ixx"/>
+                                        <constraint firstAttribute="width" constant="241" id="dGS-E0-DlE"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="22"/>
+                                    <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="20"/>
                                     <color key="textColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -350,7 +350,7 @@
                                 <constraint firstItem="m5b-1d-JeO" firstAttribute="top" secondItem="VOJ-2K-J4m" secondAttribute="bottom" constant="15" id="36s-e9-7xI"/>
                                 <constraint firstItem="VOJ-2K-J4m" firstAttribute="top" secondItem="ZE7-wm-Iwd" secondAttribute="top" constant="190" id="78A-v5-suW"/>
                                 <constraint firstItem="du8-eO-6SX" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="SWU-Mo-loq"/>
-                                <constraint firstItem="du8-eO-6SX" firstAttribute="top" secondItem="m5b-1d-JeO" secondAttribute="bottom" constant="9" id="WF6-G5-N3X"/>
+                                <constraint firstItem="du8-eO-6SX" firstAttribute="top" secondItem="m5b-1d-JeO" secondAttribute="bottom" constant="8" id="WF6-G5-N3X"/>
                                 <constraint firstItem="VOJ-2K-J4m" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="ceb-kR-Yao"/>
                                 <constraint firstItem="m5b-1d-JeO" firstAttribute="centerX" secondItem="ZE7-wm-Iwd" secondAttribute="centerX" id="fKC-ap-Gjb"/>
                             </constraints>
@@ -381,7 +381,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yex-FW-gaJ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
@@ -428,20 +428,30 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USs-Iq-MKJ">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل البحث فارغة !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58b-I4-tLV">
-                                    <rect key="frame" x="65" y="269" width="190" height="30"/>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="checklist" translatesAutoresizingMaskIntoConstraints="NO" id="MLM-uS-1JB">
+                                    <rect key="frame" x="104" y="190" width="112" height="62"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="qKI-iw-Rle"/>
+                                        <constraint firstAttribute="height" constant="62" id="GGw-Vd-x0H"/>
+                                        <constraint firstAttribute="width" constant="112" id="q5s-2L-u1k"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="30"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سجل البحث فارغة !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58b-I4-tLV">
+                                    <rect key="frame" x="81" y="269" width="158.5" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="158.5" id="anw-Mw-5k9"/>
+                                        <constraint firstAttribute="height" constant="30" id="qjM-wa-hV7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="25"/>
                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.50288955479452058" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="58b-I4-tLV" firstAttribute="centerX" secondItem="USs-Iq-MKJ" secondAttribute="centerX" id="hvo-ls-ebk"/>
-                                <constraint firstItem="58b-I4-tLV" firstAttribute="centerY" secondItem="USs-Iq-MKJ" secondAttribute="centerY" id="xK3-ae-EK0"/>
+                                <constraint firstItem="58b-I4-tLV" firstAttribute="centerX" secondItem="USs-Iq-MKJ" secondAttribute="centerX" id="10N-vS-NFF"/>
+                                <constraint firstItem="MLM-uS-1JB" firstAttribute="centerY" secondItem="USs-Iq-MKJ" secondAttribute="centerY" constant="-63" id="InP-EE-QiL"/>
+                                <constraint firstItem="58b-I4-tLV" firstAttribute="centerY" secondItem="USs-Iq-MKJ" secondAttribute="centerY" id="fjG-it-Q5Z"/>
+                                <constraint firstItem="MLM-uS-1JB" firstAttribute="centerX" secondItem="USs-Iq-MKJ" secondAttribute="centerX" id="jXJ-6M-Vfm"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -470,15 +480,219 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="INm-Hw-c1R">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBj-T7-kJb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kS-jg-9Dt">
-                                        <rect key="frame" x="16" y="61" width="288" height="404"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kS-jg-9Dt">
+                                        <rect key="frame" x="16" y="61" width="288" height="448"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <attributedString key="attributedText"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ١ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ٢ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" الرَّحْمَٰنِ الرَّحِيمِ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="٣">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" مَالِكِ يَوْمِ الدِّينِ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="٤">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="٥">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="٦">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="{">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="٧">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="}">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="LucidaGrande-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="DamascusSemiBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7f-HV-JWf">
@@ -498,8 +712,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTR-2D-wA5">
-                                        <rect key="frame" x="290" y="464" width="30" height="30"/>
-                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="290" y="508" width="30" height="30"/>
                                         <state key="normal" image="dot-menu">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -507,16 +720,14 @@
                                             <action selector="menuButton:" destination="hHM-PS-kOb" eventType="touchUpInside" id="a3O-sz-N8L"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WK4-RY-qAx">
-                                        <rect key="frame" x="-47" y="469" width="337" height="25"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZq-AD-8E7">
+                                        <rect key="frame" x="54" y="405" width="240" height="133"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0" maxValue="1" minimumValueImage="light" maximumValueImage="dark" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-o0-D9r" customClass="DesignableUISlider" customModule="Quran_Search_Engine" customModuleProvider="target">
-                                                <rect key="frame" x="-2" y="0.0" width="139" height="26"/>
-                                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="135" id="D1b-s7-4Zk"/>
-                                                </constraints>
-                                                <color key="minimumTrackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.25" minValue="0.0" maxValue="1" minimumValueImage="light" maximumValueImage="dark" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-o0-D9r" customClass="DesignableUISlider" customModule="Quran_Search_Engine" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="102" width="155" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="maximumTrackTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="thumbTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
@@ -527,51 +738,96 @@
                                                     <action selector="sliderValueChanged:" destination="hHM-PS-kOb" eventType="valueChanged" id="56J-gT-Kj0"/>
                                                 </connections>
                                             </slider>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQ8-Rm-f6J" userLabel="Seperator">
-                                                <rect key="frame" x="150" y="0.0" width="2" height="25"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="CPg-3f-GGW"/>
-                                                    <constraint firstAttribute="width" constant="2" id="UGx-wJ-ywt"/>
-                                                </constraints>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-zl-RSR">
-                                                <rect key="frame" x="167" y="0.0" width="18.5" height="25"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-h3-gv8">
+                                                <rect key="frame" x="134" y="69" width="28" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="24" minimumValue="24" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-8r-rNr">
-                                                <rect key="frame" x="200.5" y="0.0" width="94" height="29"/>
-                                                <color key="tintColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-zl-RSR">
+                                                <rect key="frame" x="10" y="69" width="19" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="24" minimumValue="24" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-8r-rNr">
+                                                <rect key="frame" x="34" y="67" width="94" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="fontSizeChanged:" destination="hHM-PS-kOb" eventType="valueChanged" id="UvD-RP-5DB"/>
                                                 </connections>
                                             </stepper>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vx4-h3-gv8">
-                                                <rect key="frame" x="309.5" y="0.0" width="27.5" height="25"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3QI-39-93G">
+                                                <rect key="frame" x="76" y="31" width="85" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الأضاءة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMU-yI-0Wd">
+                                                <rect key="frame" x="183" y="102" width="49" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="رقم الأية :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-Fx-mDT">
+                                                <rect key="frame" x="180" y="29" width="52" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="القائمة السياقية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyq-8E-IB1">
+                                                <rect key="frame" x="76" y="6" width="89" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruw-QP-UyS">
+                                                <rect key="frame" x="4" y="30" width="68" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="18"/>
+                                                <state key="normal" title="اذهب" backgroundImage="go-button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="goToVersePressed:" destination="hHM-PS-kOb" eventType="touchUpInside" id="aLJ-ek-1id"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="حجم الخط :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i23-bl-nrP">
+                                                <rect key="frame" x="168" y="68" width="64" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="14"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.3411764706" green="0.67843137249999996" blue="0.70980392160000005" alpha="0.9025042808219178" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="cQ8-Rm-f6J" firstAttribute="leading" secondItem="vrL-o0-D9r" secondAttribute="trailing" constant="15" id="upH-Ep-q09"/>
+                                            <constraint firstAttribute="height" constant="133" id="2hD-5c-DEW"/>
+                                            <constraint firstAttribute="width" constant="240" id="DhK-pA-cTh"/>
                                         </constraints>
-                                    </stackView>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49355201198630139" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="QZq-AD-8E7" secondAttribute="bottom" constant="10" id="4AN-sq-gnp"/>
                                     <constraint firstAttribute="trailing" secondItem="1kS-jg-9Dt" secondAttribute="trailing" constant="16" id="8qm-uu-whF"/>
                                     <constraint firstItem="e7f-HV-JWf" firstAttribute="top" secondItem="WBj-T7-kJb" secondAttribute="top" constant="29" id="E9K-Jc-i97"/>
+                                    <constraint firstAttribute="bottom" secondItem="1kS-jg-9Dt" secondAttribute="bottom" constant="39" id="Eyp-29-EyE"/>
                                     <constraint firstAttribute="trailing" secondItem="e7f-HV-JWf" secondAttribute="trailing" constant="16" id="Fie-Vk-4Wa"/>
+                                    <constraint firstAttribute="trailing" secondItem="QZq-AD-8E7" secondAttribute="trailing" constant="26" id="GDS-6f-tjV"/>
                                     <constraint firstItem="1kS-jg-9Dt" firstAttribute="top" secondItem="e7f-HV-JWf" secondAttribute="bottom" constant="5" id="Gg2-82-LiP"/>
                                     <constraint firstAttribute="trailing" secondItem="vTR-2D-wA5" secondAttribute="trailing" id="UQ4-Tf-UiW"/>
-                                    <constraint firstAttribute="bottom" secondItem="WK4-RY-qAx" secondAttribute="bottom" constant="10" id="Y7H-tC-qJK"/>
-                                    <constraint firstItem="vTR-2D-wA5" firstAttribute="leading" secondItem="WK4-RY-qAx" secondAttribute="trailing" id="edw-Ce-05Y"/>
                                     <constraint firstItem="e7f-HV-JWf" firstAttribute="leading" secondItem="WBj-T7-kJb" secondAttribute="leading" constant="16" id="jwr-te-sjW"/>
                                     <constraint firstAttribute="bottom" secondItem="vTR-2D-wA5" secondAttribute="bottom" constant="10" id="o7J-OQ-hLq"/>
-                                    <constraint firstItem="WK4-RY-qAx" firstAttribute="top" secondItem="1kS-jg-9Dt" secondAttribute="bottom" constant="4" id="qa2-Sm-Qga"/>
                                     <constraint firstItem="1kS-jg-9Dt" firstAttribute="leading" secondItem="WBj-T7-kJb" secondAttribute="leading" constant="16" id="vx1-fd-zDP"/>
                                 </constraints>
                             </view>
@@ -593,16 +849,18 @@
                         <outlet property="backgroundSlider" destination="vrL-o0-D9r" id="anD-XE-gyn"/>
                         <outlet property="backgroundWallpaper" destination="INm-Hw-c1R" id="dfO-OJ-vG2"/>
                         <outlet property="biggerFontIcon" destination="Vx4-h3-gv8" id="EZ8-0H-PHh"/>
+                        <outlet property="contextualMenu" destination="QZq-AD-8E7" id="6Bs-Wb-Rz7"/>
+                        <outlet property="contexualMenuBottomConstraint" destination="4AN-sq-gnp" id="tn6-Dr-CJt"/>
+                        <outlet property="goToVerseTextField" destination="3QI-39-93G" id="7zk-vq-JEH"/>
                         <outlet property="shadowView" destination="WBj-T7-kJb" id="FIK-Qg-5Hk"/>
                         <outlet property="smallerFontIcon" destination="VRw-zl-RSR" id="dy3-gZ-xIC"/>
-                        <outlet property="stackView" destination="WK4-RY-qAx" id="Qmc-ih-9nD"/>
                         <outlet property="stepper" destination="wbW-8r-rNr" id="h4H-bv-UF2"/>
                         <outlet property="textView" destination="1kS-jg-9Dt" id="XgO-GB-ffv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2Q-wI-qny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="2410"/>
+            <point key="canvasLocation" x="-140.625" y="2423.2394366197182"/>
         </scene>
         <!--الفهرس-->
         <scene sceneID="YY1-c5-26h">
@@ -613,7 +871,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Kg-5B-QUO">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="surahCell" rowHeight="68" id="cqS-11-QQG" customClass="SearchCell" customModule="Quran_Search_Engine" customModuleProvider="target">
@@ -627,11 +885,19 @@
                                                     <rect key="frame" x="5" y="5" width="310" height="58"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UE4-aW-hYC">
-                                                            <rect key="frame" x="51" y="14" width="190" height="30"/>
+                                                            <rect key="frame" x="51" y="15" width="190" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="190" id="gTP-GH-gwo"/>
                                                             </constraints>
-                                                            <attributedString key="attributedText"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment content="البقرة">
+                                                                    <attributes>
+                                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <font key="NSFont" size="40" name="DiwanMishafi"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
                                                             <nil key="highlightedColor"/>
                                                             <size key="shadowOffset" width="0.0" height="0.0"/>
                                                         </label>
@@ -649,8 +915,8 @@
                                                         <constraint firstItem="8HV-cJ-1Op" firstAttribute="top" secondItem="WSD-Xd-gM3" secondAttribute="top" constant="14" id="9PO-1C-UOS"/>
                                                         <constraint firstAttribute="bottom" secondItem="8HV-cJ-1Op" secondAttribute="bottom" constant="14" id="Gi6-Yw-sx4"/>
                                                         <constraint firstItem="UE4-aW-hYC" firstAttribute="leading" secondItem="8HV-cJ-1Op" secondAttribute="trailing" constant="11" id="Pr6-Es-Tkr"/>
-                                                        <constraint firstAttribute="bottom" secondItem="UE4-aW-hYC" secondAttribute="bottom" constant="14" id="WRe-1P-VOu"/>
-                                                        <constraint firstItem="UE4-aW-hYC" firstAttribute="top" secondItem="WSD-Xd-gM3" secondAttribute="top" constant="14" id="hae-YZ-UfP"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UE4-aW-hYC" secondAttribute="bottom" constant="13" id="WRe-1P-VOu"/>
+                                                        <constraint firstItem="UE4-aW-hYC" firstAttribute="top" secondItem="WSD-Xd-gM3" secondAttribute="top" constant="15" id="hae-YZ-UfP"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="islamicArt" translatesAutoresizingMaskIntoConstraints="NO" id="c8j-eb-ItB">
@@ -712,10 +978,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-cs-V5z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="-44" width="375" height="1044"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9u-Rs-5xl">
-                                <rect key="frame" x="1" y="64" width="373" height="936"/>
+                                <rect key="frame" x="1" y="20" width="373" height="980"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="auA-a1-vuG">
                                         <rect key="frame" x="136.5" y="57" width="100" height="100"/>
@@ -941,10 +1207,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-7s-b9v" userLabel="bg-wallpaper">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Jh-Uzz">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-zJ-5Ex" customClass="TextField" customModule="Quran_Search_Engine" customModuleProvider="target">
                                         <rect key="frame" x="16" y="195" width="288" height="36"/>
@@ -1058,10 +1324,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-3S-ZSK">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNG-rx-dyT">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم السورة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS1-Jf-lcx">
                                         <rect key="frame" x="194" y="120" width="110" height="40"/>
@@ -1164,8 +1430,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9Y-l6-w8v">
-                                        <rect key="frame" x="16" y="371" width="288" height="121"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9Y-l6-w8v">
+                                        <rect key="frame" x="16" y="371" width="288" height="165"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -1304,8 +1570,10 @@
     </scenes>
     <resources>
         <image name="background" width="1125" height="2436"/>
+        <image name="checklist" width="128" height="128"/>
         <image name="dark" width="16" height="16"/>
         <image name="dot-menu" width="30" height="30"/>
+        <image name="go-button" width="300" height="300"/>
         <image name="hamburger-menu" width="35" height="35"/>
         <image name="history" width="35" height="35"/>
         <image name="islamicArt" width="256" height="256"/>
@@ -1316,6 +1584,6 @@
         <image name="slider-thumb" width="30" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gsw-pt-ySs"/>
+        <segue reference="8Uf-tg-6bv"/>
     </inferredMetricsTieBreakers>
 </document>

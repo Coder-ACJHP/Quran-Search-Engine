@@ -11,23 +11,30 @@ import MBProgressHUD
 
 class SurahCompletlyController: UIViewController {
 
+    var keyboardSize: CGSize!
     var menuIsAppear = false
     var volatileNumber: Int = 0
+    var isKeyboardAppear = false
     var service = ServiceData.shared
     // Create animated indicator instance
     var spinnerActivity: MBProgressHUD?
+    let customFont = UIFont(name: "DamascusSemiBold", size: 24.0)
     
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var backgroundSlider: UISlider!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var contextualMenu: UIView!
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var biggerFontIcon: UILabel!
     @IBOutlet weak var smallerFontIcon: UILabel!
     @IBOutlet weak var backgroundWallpaper: UIImageView!
+    @IBOutlet weak var goToVerseTextField: UITextField!
+    @IBOutlet weak var contexualMenuBottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerKeyboardNotifications()
         
         hideElementsBeforeLoad()
         
@@ -37,10 +44,48 @@ class SurahCompletlyController: UIViewController {
         // Load data from api
         loadData()
     }
-
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(keyboardWillShow(notification:)),
+        name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(keyboardWillHide(notification:)),
+        name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if !isKeyboardAppear {
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y == 0{
+                    self.view.frame.origin.y -= keyboardSize.height
+                }
+            }
+            isKeyboardAppear = true
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if isKeyboardAppear {
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y != 0{
+                    self.view.frame.origin.y += keyboardSize.height
+                }
+            }
+            isKeyboardAppear = false
+        }
+    }
+    
     fileprivate func hideElementsBeforeLoad() {
         // Hide menu at start
-        self.stackView.alpha = 0
+        self.contextualMenu.isHidden = true
+        self.contextualMenu.layer.cornerRadius = 7
     }
     
     fileprivate func loadData() {
@@ -52,13 +97,14 @@ class SurahCompletlyController: UIViewController {
         spinnerActivity?.isUserInteractionEnabled = true
         service.fetchSurahById(surahId: volatileNumber) { (result) in
             self.textView.text = result
+            self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
         }
-        self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
+        
     }
 
     @IBAction func fontSizeChanged(_ sender: UIStepper) {
         let fontSize = CGFloat(sender.value)
-        textView.font = UIFont(name: "Damascus", size: fontSize)
+        textView.changeFontSize(size: fontSize)
     }
     
     @IBAction func menuButton(_ sender: Any) {
@@ -72,14 +118,16 @@ class SurahCompletlyController: UIViewController {
     
     fileprivate func showMenu() {
         
-        UIView.animate(withDuration: 0.5) {
-            self.stackView.alpha = 1
-        }
+        contextualMenu.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.contextualMenu.isHidden = false
+            self.contextualMenu.transform = .identity
+        }, completion: nil)
     }
     
     fileprivate func hideMenu() {
         UIView.animate(withDuration: 0.5) {
-            self.stackView.alpha = 0
+            self.contextualMenu.isHidden = true
         }
     }
     
@@ -87,6 +135,30 @@ class SurahCompletlyController: UIViewController {
         
         shadowView.backgroundColor = shadowView.backgroundColor?.withAlphaComponent(CGFloat(sender.value))
     }
+    
+    @IBAction func goToVersePressed(_ sender: UIButton) {
+        if let verseNumber = goToVerseTextField.text, !verseNumber.isEmpty {
+            let verseNumber = verseNumber.replaceEnglishDigitsWithArabic
+            print("Verse number: \(verseNumber)")
+           
+            let substringRange = textView.text.range(of: verseNumber)!
+            let nsRange = NSRange(substringRange, in: textView.text)
+            textView.scrollRangeToVisible(nsRange)
+            
+            gotoVerseFinished()
+        }
+    }
+    
+    fileprivate func gotoVerseFinished() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
+            self.view.frame.origin.y = 0
+            self.view.endEditing(true)
+        }) { (isFinished) in
+            self.goToVerseTextField.text = ""
+            self.hideMenu()
+        }
+    }
+    
 }
 
 

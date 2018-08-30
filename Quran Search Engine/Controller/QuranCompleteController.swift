@@ -50,7 +50,7 @@ extension QuranCompleteController: UITableViewDelegate, UITableViewDataSource {
         
         let customCell = tableView.dequeueReusableCell(withIdentifier: "surahCell", for: indexPath) as! SearchCell
         let number = String(indexPath.row + 1)
-        customCell.surahNameLabel.text = "السورة" + " " + data.quranSurahIndex[number]!
+        customCell.surahNameLabel.text = "السورة" + "  " + data.quranSurahIndex[number]!
         
         return customCell
     }

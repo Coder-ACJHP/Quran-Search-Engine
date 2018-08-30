@@ -38,8 +38,6 @@ class MainController: UIViewController {
     var spinnerActivity: MBProgressHUD?
     // New Searchbar
     var searchController: UISearchController!
-    // Set custom color
-    let customGreen = UIColor.init(red: 99 / 255, green: 155 / 255, blue: 177 / 255, alpha: 1.0)
     // Search result will collect here
     var resultlist = [SearchResultObj]()
     // Searched keywords will collect here
@@ -276,7 +274,7 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
                 // Add result list that coming from search result to local result list
                 self.resultlist = resultArray
                 // Change some property of text label
-                self.searchResultLabel.textColor = self.customGreen
+                self.searchResultLabel.textColor = UIColor.customGreen
                 let numberAsString = String(self.resultlist.count)
                 self.searchResultLabel.text = "تم العثور على \(numberAsString.replaceEnglishDigitsWithArabic) أية"
             }
@@ -386,13 +384,11 @@ extension MainController: UITableViewDelegate, UITableViewDataSource, UISearchBa
         self.searchController.searchBar.endEditing(true)
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchController.searchBar.text = ""??
-    }
-    
     // Hide keyboard when cancel button pressed
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchController.searchBar.endEditing(true)
+        searchController.searchBar.text = ""
+        searchQuery = ""
         self.view.endEditing(true)
     }
     

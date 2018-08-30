@@ -24,20 +24,5 @@ class ResultTableCell: UITableViewCell {
     
 }
 
-extension UILabel {
-    
-    func chageColorOfText(lineOfText: String, text: String, color: UIColor) {
-        let attributedString: NSMutableAttributedString = NSMutableAttributedString(string: lineOfText)
-        attributedString.setColorForText(textForAttribute: text, withColor: color)
-        self.attributedText = attributedString
-    }
-}
 
-extension NSMutableAttributedString {
-    func setColorForText(textForAttribute: String, withColor color: UIColor) {
-        let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
-        self.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
-        let usedFont = UIFont(name: "Damascus", size: 19.0)
-        self.addAttribute(NSAttributedStringKey.font, value: usedFont!, range: range)
-    }
-}
+

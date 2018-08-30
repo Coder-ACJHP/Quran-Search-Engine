@@ -163,7 +163,7 @@ class ServiceData {
                                             text = String(text[range])
                                         }
                                         let arabicNumber = String(counter).replaceEnglishDigitsWithArabic
-                                        surahAyahs += text + " ⎰\(arabicNumber)⎱ "
+                                        surahAyahs += text + " { \(arabicNumber) } "
                                     }
                                     counter = counter + 1
                                 }
