@@ -15,7 +15,7 @@ class ServiceData {
     let data = DataSource.shared
     let specialCharacters = "|1234567890"
     let arabicAlphabet = "ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ء ة ئ ى إ"
-    typealias FETCH_RESULT_DATA = (String) -> ()
+    typealias FETCH_RESULT_DATA = (String, String, Int) -> ()
     typealias SEARCH_RESULT_DATA = ([SearchResultObj]) -> ()
     typealias SEARCH_RESULT_DATA_WITH_INDEX = (SearchResultObj) -> ()
     
@@ -140,6 +140,8 @@ class ServiceData {
     func fetchSurahById(surahId: Int, completionHandler: @escaping FETCH_RESULT_DATA) {
         
         var surahAyahs = String()
+        var surahName = String()
+        var totalVersesCount = Int()
         let apiUrl = URL(string: "http://api.alquran.cloud/surah/" + String(surahId))
         let session = URLSession.shared
         let task = session.dataTask(with: apiUrl!) { (data, response, error) in
@@ -151,6 +153,8 @@ class ServiceData {
                     DispatchQueue.main.async {
                         var counter = 1
                         let mainData = result["data"]
+                        totalVersesCount = (mainData!["numberOfAyahs"] as? Int)!
+                        surahName = (mainData!["name"] as? String)!
                         let ayahArray = mainData!["ayahs"] as! [Dictionary<String, AnyObject>]
                         ayahArray.forEach({ (result) in
                             result.forEach({ (key, value) in
@@ -169,7 +173,7 @@ class ServiceData {
                                 }
                             })
                         })
-                        completionHandler(surahAyahs)
+                        completionHandler(surahAyahs, surahName, totalVersesCount)
                     }
                 } catch {
                     print(error.localizedDescription)

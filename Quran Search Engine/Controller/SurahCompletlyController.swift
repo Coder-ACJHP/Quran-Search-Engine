@@ -11,6 +11,7 @@ import MBProgressHUD
 
 class SurahCompletlyController: UIViewController {
 
+    var verseCount: Int!
     var keyboardSize: CGSize!
     var menuIsAppear = false
     var volatileNumber: Int = 0
@@ -95,8 +96,11 @@ class SurahCompletlyController: UIViewController {
         // Change some properties of spinner
         spinnerActivity?.label.text = "جاري التحميل"
         spinnerActivity?.isUserInteractionEnabled = true
-        service.fetchSurahById(surahId: volatileNumber) { (result) in
-            self.textView.text = result
+        service.fetchSurahById(surahId: volatileNumber) { (versesText, surahName, totalVerseCount) in
+            self.textView.text = versesText
+            // Initialize the variables to use it in another function
+            self.verseCount = totalVerseCount
+            self.navigationItem.title = surahName
             self.spinnerActivity?.hide(animated: true, afterDelay: 0.5)
         }
         
@@ -138,27 +142,53 @@ class SurahCompletlyController: UIViewController {
     
     @IBAction func goToVersePressed(_ sender: UIButton) {
         if let verseNumber = goToVerseTextField.text, !verseNumber.isEmpty {
-            let verseNumber = verseNumber.replaceEnglishDigitsWithArabic
-            print("Verse number: \(verseNumber)")
-           
-            let substringRange = textView.text.range(of: verseNumber)!
-            let nsRange = NSRange(substringRange, in: textView.text)
-            textView.scrollRangeToVisible(nsRange)
             
-            gotoVerseFinished()
+            // Convert String to integer
+            if let verseNumberAsInt = Int(verseNumber) {
+                
+                // Compare two numbers if entered number less than total verse number start to logic code
+                if verseNumberAsInt <= self.verseCount {
+                    
+                    let verseNumber = verseNumber.replaceEnglishDigitsWithArabic
+                    let substringRange = textView.text.range(of: verseNumber)!
+                    let nsRange = NSRange(substringRange, in: textView.text)
+                    transformToVerse { (isFinished) in
+                        if isFinished {
+                            UIView.animate(withDuration: 1.0) {
+                                self.textView.scrollRangeToVisible(nsRange)
+                            }
+                        }
+                    }
+                } else {
+                    let alertUser = UIAlertController(title: "!تحذير", message: "لم يتم العثور على أية رقم \(verseNumber)", preferredStyle: .alert)
+                    alertUser.addAction(UIAlertAction(title: "تخطي", style: .cancel, handler: nil))
+                    self.present(alertUser, animated: true, completion: nil)
+                }
+                
+            }
         }
     }
     
-    fileprivate func gotoVerseFinished() {
+    fileprivate func transformToVerse(completionHandler: @escaping (Bool) -> Void) {
+        self.goToVerseWithAnimations(completionHandler: { (isFinished) in
+            if isFinished {
+                completionHandler(true)
+            }
+        })
+    }
+    
+    fileprivate func goToVerseWithAnimations(completionHandler: @escaping (Bool) -> Void) {
         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
             self.view.frame.origin.y = 0
             self.view.endEditing(true)
         }) { (isFinished) in
-            self.goToVerseTextField.text = ""
-            self.hideMenu()
+            if isFinished {
+                self.goToVerseTextField.text = ""
+                self.hideMenu()
+                completionHandler(true)
+            }
         }
     }
-    
 }
 
 
