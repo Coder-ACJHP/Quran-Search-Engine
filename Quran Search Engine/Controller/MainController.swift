@@ -58,8 +58,7 @@ class MainController: UIViewController {
         super.viewDidLoad()
         
         setupBlackShadowView()
-        // Add logo image to navbar title view
-        setupNavbarLogo()
+
         // Get default text for label
         fixedText = searchResultLabel.text!
         // Add border to result label holder
@@ -79,17 +78,12 @@ class MainController: UIViewController {
         
         setupEmptyTableViewAlert()
         
+        // Request review
+        StoreReviewHelper.checkAndAskForReview()
     }
     
     private func getSearchedKeywordHistory() {
         searchKeywords = defaults.getHistoryList()
-    }
-    
-    fileprivate func setupNavbarLogo() {
-        let logoView = UIImageView(image: UIImage(named: "App-logo"))
-        logoView.contentMode = .scaleToFill
-        logoView.clipsToBounds = true
-        self.navigationItem.titleView = logoView
     }
     
     fileprivate func setupBlackShadowView() {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5842F1E8213938FB00736A97 /* ReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5842F1E7213938FB00736A97 /* ReviewHelper.swift */; };
+		5842F1F22139694300736A97 /* AcknowledgmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5842F1F12139694300736A97 /* AcknowledgmentController.swift */; };
 		586DEBF0210B2DCA00A4A5F9 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586DEBEF210B2DCA00A4A5F9 /* HistoryCell.swift */; };
 		5870BA90210756DE00C90498 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5870BA8F210756DE00C90498 /* Animations.swift */; };
 		588927002105FFBA00E642B7 /* DesignableUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588926FF2105FFBA00E642B7 /* DesignableUISlider.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		0C602C2D27377EF3C13FAD28 /* Pods-Quran Search Engine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quran Search Engine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quran Search Engine/Pods-Quran Search Engine.debug.xcconfig"; sourceTree = "<group>"; };
+		5842F1E7213938FB00736A97 /* ReviewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewHelper.swift; sourceTree = "<group>"; };
+		5842F1F12139694300736A97 /* AcknowledgmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgmentController.swift; sourceTree = "<group>"; };
 		586DEBEF210B2DCA00A4A5F9 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		5870BA8F210756DE00C90498 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		588926FF2105FFBA00E642B7 /* DesignableUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUISlider.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				58B23B2920FE1C640044CABC /* QuranCompleteController.swift */,
 				58B23B2D20FE3B260044CABC /* SurahCompletlyController.swift */,
 				58E1CB09210872E1004A3CC4 /* HistoryController.swift */,
+				5842F1F12139694300736A97 /* AcknowledgmentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 		F213BE1B20FA081A007D336B /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5842F1E7213938FB00736A97 /* ReviewHelper.swift */,
 				F213BE1E20FA0B65007D336B /* DataSource.swift */,
 				F213BE2420FA3308007D336B /* ServiceData.swift */,
 				F213BE2920FA3F1B007D336B /* FileReader.swift */,
@@ -338,7 +344,9 @@
 				F26CAF7321123663009265AC /* TextField.swift in Sources */,
 				588927002105FFBA00E642B7 /* DesignableUISlider.swift in Sources */,
 				58E1CB0C210877E4004A3CC4 /* TempDatabase.swift in Sources */,
+				5842F1E8213938FB00736A97 /* ReviewHelper.swift in Sources */,
 				58B23B2A20FE1C640044CABC /* QuranCompleteController.swift in Sources */,
+				5842F1F22139694300736A97 /* AcknowledgmentController.swift in Sources */,
 				58B23B2C20FE22510044CABC /* SearchCell.swift in Sources */,
 				F213BE2A20FA3F1B007D336B /* FileReader.swift in Sources */,
 				815A91E821375BBE00E3B1FB /* Extensions.swift in Sources */,

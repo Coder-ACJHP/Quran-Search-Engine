@@ -6,10 +6,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Controller-->
+        <!--محرك بحث القرأني-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainController" customModule="Quran_Search_Engine" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,14 +37,14 @@
                                                         <constraint firstAttribute="width" constant="35" id="ust-0Z-4L1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محرك البحث القرآني" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cz7-9U-TIV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محرك البحث القرآني" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz7-9U-TIV">
                                                     <rect key="frame" x="70" y="16" width="154" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="153.5" id="QT4-Ob-Bai"/>
                                                         <constraint firstAttribute="height" constant="35" id="xXZ-oT-BoC"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="40"/>
+                                                    <color key="textColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AMs-Fj-ED5">
@@ -279,14 +280,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Kp-Cr-Guv">
+                    <navigationItem key="navigationItem" title="محرك بحث القرأني" id="6Kp-Cr-Guv">
                         <barButtonItem key="backBarButtonItem" title="الرجوع" id="qqI-vK-6h0"/>
                         <barButtonItem key="leftBarButtonItem" image="hamburger-menu" id="8jf-UX-ylM" userLabel="Menu-button">
                             <connections>
                                 <action selector="menuButtonPressed:" destination="BYZ-38-t0r" id="hlc-9Z-eJn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="history" id="6hr-ZY-EzO">
+                        <barButtonItem key="rightBarButtonItem" image="history" id="6hr-ZY-EzO">
                             <connections>
                                 <segue destination="4Zq-JO-05s" kind="show" identifier="toHistory" id="Afg-jg-qFZ"/>
                             </connections>
@@ -469,7 +470,7 @@
                     <viewLayoutGuide key="safeArea" id="ARb-8o-Zlc"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1641" y="294"/>
+            <point key="canvasLocation" x="1909" y="362"/>
         </scene>
         <!--سورة كاملة-->
         <scene sceneID="JhH-Gf-Kdc">
@@ -862,6 +863,178 @@
             </objects>
             <point key="canvasLocation" x="-140.625" y="2423.2394366197182"/>
         </scene>
+        <!--Acknowledgment Controller-->
+        <scene sceneID="OQ9-5E-Ygf">
+            <objects>
+                <viewController id="PlY-OE-Ki8" customClass="AcknowledgmentController" customModule="Quran_Search_Engine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RrF-DF-Ulk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open source acknowledgments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72M-fR-sj2">
+                                <rect key="frame" x="25" y="49" width="270" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRI-Bh-9gu">
+                                <rect key="frame" x="16" y="103" width="250" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="MBProgressHUD">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mbProgressButon:" destination="PlY-OE-Ki8" eventType="touchUpInside" id="AyN-Xi-5VO"/>
+                                    <action selector="mbProgressButon:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="ITa-R4-Dll"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="License: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAe-y9-6nb">
+                                <rect key="frame" x="16" y="121" width="69" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJT-uN-l3R">
+                                <rect key="frame" x="16" y="194" width="250" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Islamic Network">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="islamicNetworkButton:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="QXz-Ur-5Wq"/>
+                                    <action selector="islamicNetworkButton:" destination="PlY-OE-Ki8" eventType="touchUpInside" id="f2d-pf-gbg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yn-YN-rlM">
+                                <rect key="frame" x="16" y="286" width="250" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Tanzil Quran">
+                                    <color key="titleColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tanzilButton:" destination="PlY-OE-Ki8" eventType="touchUpInside" id="OuK-DF-zLa"/>
+                                    <action selector="tanzilButton:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="VeL-wB-pca"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGF-7K-0hk">
+                                <rect key="frame" x="16" y="143" width="69" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="https://github.com/jdg/MBProgressHUD" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeL-V8-DEj">
+                                <rect key="frame" x="93" y="143" width="213" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MIT " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ob-cS-8E0">
+                                <rect key="frame" x="93" y="121" width="84" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="License: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-Mh-N0r">
+                                <rect key="frame" x="16" y="213" width="69" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-kt-KcU">
+                                <rect key="frame" x="16" y="235" width="69" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="www.islamicnetwork.net/" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1j-lQ-gdS">
+                                <rect key="frame" x="93" y="235" width="211" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Islamic Network" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42e-GO-tfX">
+                                <rect key="frame" x="93" y="213" width="101" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="License: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHs-Rd-LEF">
+                                <rect key="frame" x="16" y="305" width="69" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRC-ee-Syo">
+                                <rect key="frame" x="16" y="327" width="69" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="http://tanzil.net/" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2d-Yz-ZtM">
+                                <rect key="frame" x="93" y="327" width="211" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creative Commons Attribution 3.0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byn-wK-tXO">
+                                <rect key="frame" x="93" y="305" width="213" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upi-Fw-wVg">
+                                <rect key="frame" x="100" y="414" width="120" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissBtnPressed:" destination="PlY-OE-Ki8" eventType="touchUpInside" id="T3Z-iH-0V8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="byP-dM-fkO"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissBtn" destination="Upi-Fw-wVg" id="fIC-Lc-mE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MV-Rp-8Se" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648.75" y="2986.2676056338028"/>
+        </scene>
         <!--الفهرس-->
         <scene sceneID="YY1-c5-26h">
             <objects>
@@ -967,7 +1140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="806-Fs-GZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="1640"/>
+            <point key="canvasLocation" x="-141" y="1758"/>
         </scene>
         <!--عن التطبيق-->
         <scene sceneID="05t-iN-FZx">
@@ -978,26 +1151,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Bvq-cs-V5z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="956"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9u-Rs-5xl">
-                                <rect key="frame" x="1" y="64" width="373" height="936"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="956"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="menu-inner-icon" translatesAutoresizingMaskIntoConstraints="NO" id="auA-a1-vuG">
-                                        <rect key="frame" x="136.5" y="57" width="100" height="100"/>
+                                        <rect key="frame" x="138" y="57" width="100" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="5M0-Mx-0dS"/>
-                                            <constraint firstAttribute="height" constant="100" id="PPZ-CC-duE"/>
+                                            <constraint firstAttribute="height" constant="100" id="aLA-8j-Eou"/>
+                                            <constraint firstAttribute="width" constant="100" id="m7c-iz-S6Y"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محرك البحث القرآني" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I54-ZU-WfS">
-                                        <rect key="frame" x="16" y="173" width="341" height="29"/>
-                                        <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="29"/>
+                                        <rect key="frame" x="17" y="173" width="341" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="eG7-rd-bc4"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="341" id="vUY-qW-Ez3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="42"/>
+                                        <color key="textColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الإصدار : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaW-th-mRx">
+                                        <rect key="frame" x="171" y="231" width="90" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="9Ua-0k-GEg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="bUF-k2-eJR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="20"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-Ha-Ypm">
+                                        <rect key="frame" x="104" y="228" width="59" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="Ogp-N8-UfK"/>
+                                            <constraint firstAttribute="height" constant="21" id="U6m-sX-Dzb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndI-s5-SeC">
-                                        <rect key="frame" x="16" y="264" width="341" height="98"/>
+                                        <rect key="frame" x="17" y="310" width="341" height="98"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="98" id="HjD-ao-aig"/>
+                                            <constraint firstAttribute="width" constant="341" id="MXq-Lc-xp0"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">هذا التطبيق يوفر لك البحث على الآيات التي تحتوي على الكلمة أوالكلمات التي تبحث عنها في القرآن الكريم.عند النقر فوق لرؤية تفاصيل الآيات ، يحتاج التطبيق إلى اتصال بالإنترنت لتوفير معلومات أكثر تفصيلاً</string>
@@ -1010,101 +1211,56 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PX-gn-Jsc">
-                                        <rect key="frame" x="16" y="479" width="341" height="38"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc5-1F-wwQ">
+                                        <rect key="frame" x="104" y="448" width="255" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="EYk-QV-qcu"/>
+                                            <constraint firstAttribute="height" constant="30" id="Aq3-q1-VAA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="255" id="lMI-Ca-b23"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="MBProgressHUD">
-                                            <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="DamascusBold" family="Damascus" pointSize="18"/>
+                                        <state key="normal" title="المكتبات الخارجية المستخدمة في التطبيق">
+                                            <color key="titleColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="mbProgressButon:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="SCD-sp-VOU"/>
+                                            <segue destination="PlY-OE-Ki8" kind="presentation" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="BOO-Fs-KXg">
+                                                <segue key="commit" inheritsFrom="parent" id="cef-0Q-uBv"/>
+                                                <segue key="preview" inheritsFrom="commit" id="Qgl-cH-bgF"/>
+                                            </segue>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under the terms and conditions of the MIT license." lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79e-vx-Z8d">
-                                        <rect key="frame" x="16" y="517" width="341" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="CQM-IX-fZq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1K-Yt-yXR">
-                                        <rect key="frame" x="16" y="565" width="341" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Islamic Network">
-                                            <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="islamicNetworkButton:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="3ny-Jv-Un9"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under the terms and conditions of the Islamic Network license." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf0-Lc-pDx">
-                                        <rect key="frame" x="16" y="603" width="341" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eml-Zb-QXx">
-                                        <rect key="frame" x="16" y="647" width="341" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Tanzil Quran">
-                                            <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tanzilButton:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="WiQ-Mi-qsz"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under the terms and conditions of the Creative Commons Attribution 3.0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duX-9b-6J1">
-                                        <rect key="frame" x="16" y="685" width="341" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المكتبات الخارجية المستخدمة في التطبيق :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYD-Dl-xbx">
-                                        <rect key="frame" x="16" y="430" width="341" height="19"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="19" id="Ewp-Yn-Qg0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="21"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الإصدار : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaW-th-mRx">
-                                        <rect key="frame" x="187" y="222" width="90.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="20"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hgk-H2-PaT">
-                                        <rect key="frame" x="234" y="761" width="123" height="31"/>
+                                        <rect key="frame" x="236" y="521" width="123" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="4Jf-SO-h8D"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="Vm1-RB-XZB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="19"/>
                                         <state key="normal" title="سياسة الخصوصية">
-                                            <color key="titleColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="privacyButton:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="8X1-fe-acZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cP5-Fu-Ot5">
-                                        <rect key="frame" x="16" y="761" width="106" height="31"/>
+                                        <rect key="frame" x="16" y="521" width="106" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="8zV-i2-s5U"/>
+                                            <constraint firstAttribute="height" constant="31" id="gC3-uD-JtY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="DamascusSemiBold" family="Damascus" pointSize="19"/>
                                         <state key="normal" title="الأحكام والشروط">
-                                            <color key="titleColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.46274509800000002" green="0.74509803919999995" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="termsAndCondition:" destination="Hdr-K6-zKq" eventType="touchUpInside" id="uKS-jp-wYd"/>
                                         </connections>
                                     </button>
                                     <wkWebView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-bq-XKK">
-                                        <rect key="frame" x="16" y="793" width="341" height="112"/>
+                                        <rect key="frame" x="16" y="573" width="343" height="367"/>
                                         <color key="backgroundColor" red="0.10980392156862745" green="0.11372549019607843" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="112" id="Cbr-i3-RI0"/>
+                                            <constraint firstAttribute="height" constant="367" id="wbB-bS-W1i"/>
                                         </constraints>
                                         <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO">
                                             <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
@@ -1112,78 +1268,48 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucM-Ha-Ypm">
-                                        <rect key="frame" x="134" y="220" width="48.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="hgk-H2-PaT" firstAttribute="top" secondItem="duX-9b-6J1" secondAttribute="bottom" constant="40" id="0B0-Pl-77J"/>
-                                    <constraint firstItem="ndI-s5-SeC" firstAttribute="top" secondItem="ucM-Ha-Ypm" secondAttribute="bottom" constant="23" id="0dW-yp-RHb"/>
-                                    <constraint firstAttribute="trailing" secondItem="ndI-s5-SeC" secondAttribute="trailing" constant="16" id="0ia-nO-XiA"/>
-                                    <constraint firstAttribute="trailing" secondItem="79e-vx-Z8d" secondAttribute="trailing" constant="16" id="0ld-Hv-drD"/>
-                                    <constraint firstItem="auA-a1-vuG" firstAttribute="centerX" secondItem="r9u-Rs-5xl" secondAttribute="centerX" id="0li-JS-2gF"/>
-                                    <constraint firstItem="KaW-th-mRx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="20" symbolic="YES" id="17c-Fh-aRq"/>
-                                    <constraint firstItem="4PX-gn-Jsc" firstAttribute="top" secondItem="SYD-Dl-xbx" secondAttribute="bottom" constant="30" id="6uk-yV-IHw"/>
-                                    <constraint firstItem="SYD-Dl-xbx" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="7f9-rN-WXB"/>
-                                    <constraint firstItem="ucM-Ha-Ypm" firstAttribute="top" secondItem="I54-ZU-WfS" secondAttribute="bottom" constant="18" id="8z2-TD-wf8"/>
-                                    <constraint firstAttribute="bottom" secondItem="I54-ZU-WfS" secondAttribute="bottom" constant="734" id="9WM-FY-74T"/>
-                                    <constraint firstItem="I54-ZU-WfS" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="AyW-Br-Dhg"/>
-                                    <constraint firstItem="KaW-th-mRx" firstAttribute="top" secondItem="I54-ZU-WfS" secondAttribute="bottom" constant="20" id="F5d-pg-KAk"/>
-                                    <constraint firstAttribute="trailing" secondItem="eml-Zb-QXx" secondAttribute="trailing" constant="16" id="GdP-tX-hnh"/>
-                                    <constraint firstItem="ndI-s5-SeC" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="IgJ-VN-qAN"/>
-                                    <constraint firstItem="4PX-gn-Jsc" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="JsT-Uq-HDn"/>
-                                    <constraint firstItem="ndI-s5-SeC" firstAttribute="top" secondItem="KaW-th-mRx" secondAttribute="bottom" constant="22" id="KnN-xI-AzC"/>
-                                    <constraint firstItem="axT-bq-XKK" firstAttribute="centerX" secondItem="r9u-Rs-5xl" secondAttribute="centerX" id="L12-9g-x51"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cP5-Fu-Ot5" secondAttribute="trailing" constant="20" symbolic="YES" id="LwC-pm-iAx"/>
-                                    <constraint firstItem="axT-bq-XKK" firstAttribute="top" secondItem="hgk-H2-PaT" secondAttribute="bottom" constant="1" id="MFg-Hg-GcO"/>
-                                    <constraint firstItem="79e-vx-Z8d" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="MbS-2t-SeH"/>
-                                    <constraint firstAttribute="trailing" secondItem="I54-ZU-WfS" secondAttribute="trailing" constant="16" id="Mqt-8W-3GY"/>
-                                    <constraint firstItem="o1K-Yt-yXR" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="NkH-M9-3qQ"/>
-                                    <constraint firstItem="auA-a1-vuG" firstAttribute="top" secondItem="r9u-Rs-5xl" secondAttribute="top" constant="57" id="P5c-9c-qtd"/>
-                                    <constraint firstItem="duX-9b-6J1" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="Svi-9S-FBy"/>
-                                    <constraint firstItem="hgk-H2-PaT" firstAttribute="leading" relation="lessThanOrEqual" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="234" id="TP6-rl-3T9"/>
-                                    <constraint firstAttribute="trailing" secondItem="hgk-H2-PaT" secondAttribute="trailing" constant="16" id="VSx-tu-ra5"/>
-                                    <constraint firstItem="eml-Zb-QXx" firstAttribute="top" secondItem="Cf0-Lc-pDx" secondAttribute="bottom" constant="8" id="Vgv-Gb-z5c"/>
-                                    <constraint firstItem="I54-ZU-WfS" firstAttribute="top" secondItem="auA-a1-vuG" secondAttribute="bottom" constant="16" id="VzE-QD-GIs"/>
-                                    <constraint firstAttribute="trailing" secondItem="axT-bq-XKK" secondAttribute="trailing" constant="16" id="ZH4-DE-Dul"/>
-                                    <constraint firstAttribute="trailing" secondItem="duX-9b-6J1" secondAttribute="trailing" constant="16" id="czI-P9-1Ga"/>
-                                    <constraint firstItem="79e-vx-Z8d" firstAttribute="top" secondItem="4PX-gn-Jsc" secondAttribute="bottom" id="eWo-nh-Bqu"/>
-                                    <constraint firstItem="I54-ZU-WfS" firstAttribute="top" secondItem="r9u-Rs-5xl" secondAttribute="top" constant="173" id="fJi-I3-Tmo"/>
-                                    <constraint firstItem="Cf0-Lc-pDx" firstAttribute="top" secondItem="o1K-Yt-yXR" secondAttribute="bottom" id="feN-1I-FKf"/>
-                                    <constraint firstAttribute="trailing" secondItem="4PX-gn-Jsc" secondAttribute="trailing" constant="16" id="guZ-PZ-N1y"/>
-                                    <constraint firstItem="o1K-Yt-yXR" firstAttribute="top" secondItem="79e-vx-Z8d" secondAttribute="bottom" constant="8" id="hM7-tZ-l9l"/>
-                                    <constraint firstAttribute="trailing" secondItem="KaW-th-mRx" secondAttribute="trailing" constant="95.5" id="jPY-Qb-r2G"/>
-                                    <constraint firstItem="Cf0-Lc-pDx" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="kX3-2a-yWa"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cf0-Lc-pDx" secondAttribute="trailing" constant="16" id="pOg-xe-13W"/>
-                                    <constraint firstItem="cP5-Fu-Ot5" firstAttribute="top" secondItem="duX-9b-6J1" secondAttribute="bottom" constant="40" id="pvK-ls-Qgr"/>
-                                    <constraint firstItem="axT-bq-XKK" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="qZb-6C-zZg"/>
-                                    <constraint firstAttribute="trailing" secondItem="o1K-Yt-yXR" secondAttribute="trailing" constant="16" id="rjq-6G-N8s"/>
-                                    <constraint firstItem="axT-bq-XKK" firstAttribute="top" secondItem="cP5-Fu-Ot5" secondAttribute="bottom" constant="1" id="rrg-CS-GDS"/>
-                                    <constraint firstItem="ucM-Ha-Ypm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r9u-Rs-5xl" secondAttribute="leading" id="tdS-8C-QuV"/>
-                                    <constraint firstItem="eml-Zb-QXx" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="tjy-vn-qfm"/>
-                                    <constraint firstItem="SYD-Dl-xbx" firstAttribute="top" secondItem="ndI-s5-SeC" secondAttribute="bottom" constant="68" id="u8p-Tf-wC0"/>
-                                    <constraint firstAttribute="trailing" secondItem="SYD-Dl-xbx" secondAttribute="trailing" constant="16" id="u9Q-8t-JE1"/>
-                                    <constraint firstAttribute="trailing" secondItem="ucM-Ha-Ypm" secondAttribute="trailing" constant="190.5" id="wLF-iX-I46"/>
-                                    <constraint firstItem="duX-9b-6J1" firstAttribute="top" secondItem="eml-Zb-QXx" secondAttribute="bottom" id="wYp-CZ-b2d"/>
-                                    <constraint firstItem="cP5-Fu-Ot5" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="xyg-mQ-Tg2"/>
-                                    <constraint firstAttribute="bottom" secondItem="axT-bq-XKK" secondAttribute="bottom" constant="31" id="xyx-6Q-mYY"/>
+                                    <constraint firstItem="wc5-1F-wwQ" firstAttribute="top" secondItem="ndI-s5-SeC" secondAttribute="bottom" constant="40" id="10E-1X-qhA"/>
+                                    <constraint firstItem="wc5-1F-wwQ" firstAttribute="leading" secondItem="cP5-Fu-Ot5" secondAttribute="trailing" constant="-18" id="2uu-DI-lFT"/>
+                                    <constraint firstItem="cP5-Fu-Ot5" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="3ks-yn-12z"/>
+                                    <constraint firstItem="hgk-H2-PaT" firstAttribute="leading" secondItem="cP5-Fu-Ot5" secondAttribute="trailing" constant="114" id="6GP-cg-idX"/>
+                                    <constraint firstItem="ndI-s5-SeC" firstAttribute="top" secondItem="KaW-th-mRx" secondAttribute="bottom" constant="59" id="8h6-DH-vm8"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KaW-th-mRx" secondAttribute="trailing" constant="20" symbolic="YES" id="8zJ-K5-Ido"/>
+                                    <constraint firstItem="ucM-Ha-Ypm" firstAttribute="top" secondItem="I54-ZU-WfS" secondAttribute="bottom" constant="8" id="955-A6-Exb"/>
+                                    <constraint firstItem="I54-ZU-WfS" firstAttribute="top" secondItem="auA-a1-vuG" secondAttribute="bottom" constant="16" id="9h6-CJ-31L"/>
+                                    <constraint firstItem="auA-a1-vuG" firstAttribute="centerX" secondItem="r9u-Rs-5xl" secondAttribute="centerX" id="Aru-Ts-jw4"/>
+                                    <constraint firstAttribute="trailing" secondItem="axT-bq-XKK" secondAttribute="trailing" constant="16" id="Fas-4X-nCy"/>
+                                    <constraint firstItem="KaW-th-mRx" firstAttribute="leading" secondItem="ucM-Ha-Ypm" secondAttribute="trailing" constant="8" id="Nh2-dy-tGR"/>
+                                    <constraint firstItem="axT-bq-XKK" firstAttribute="top" secondItem="hgk-H2-PaT" secondAttribute="bottom" constant="21" id="OE6-mE-mKp"/>
+                                    <constraint firstItem="axT-bq-XKK" firstAttribute="centerX" secondItem="r9u-Rs-5xl" secondAttribute="centerX" id="OEr-pT-fuH"/>
+                                    <constraint firstAttribute="trailing" secondItem="wc5-1F-wwQ" secondAttribute="trailing" constant="16" id="Q7m-09-83Z"/>
+                                    <constraint firstItem="axT-bq-XKK" firstAttribute="leading" secondItem="r9u-Rs-5xl" secondAttribute="leading" constant="16" id="QsZ-sP-oaQ"/>
+                                    <constraint firstItem="KaW-th-mRx" firstAttribute="top" secondItem="I54-ZU-WfS" secondAttribute="bottom" constant="11" id="VQn-or-Hmp"/>
+                                    <constraint firstItem="I54-ZU-WfS" firstAttribute="centerX" secondItem="r9u-Rs-5xl" secondAttribute="centerX" id="VbU-ue-yau"/>
+                                    <constraint firstItem="hgk-H2-PaT" firstAttribute="top" secondItem="wc5-1F-wwQ" secondAttribute="bottom" constant="43" id="ZVp-zN-VXy"/>
+                                    <constraint firstItem="cP5-Fu-Ot5" firstAttribute="top" secondItem="wc5-1F-wwQ" secondAttribute="bottom" constant="43" id="bKL-nk-mO1"/>
+                                    <constraint firstAttribute="bottom" secondItem="axT-bq-XKK" secondAttribute="bottom" constant="16" id="kAB-io-2oh"/>
+                                    <constraint firstItem="auA-a1-vuG" firstAttribute="top" secondItem="r9u-Rs-5xl" secondAttribute="top" constant="57" id="kaS-gx-Gdv"/>
+                                    <constraint firstItem="ndI-s5-SeC" firstAttribute="centerX" secondItem="r9u-Rs-5xl" secondAttribute="centerX" id="mEu-d2-Jfr"/>
+                                    <constraint firstItem="ucM-Ha-Ypm" firstAttribute="leading" secondItem="wc5-1F-wwQ" secondAttribute="leading" id="tdW-tg-FiU"/>
+                                    <constraint firstAttribute="trailing" secondItem="hgk-H2-PaT" secondAttribute="trailing" constant="16" id="w0I-K7-ZU1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="efA-s8-y2l" firstAttribute="bottom" secondItem="Bvq-cs-V5z" secondAttribute="bottom" id="4eq-GL-FpV"/>
+                            <constraint firstAttribute="bottom" secondItem="r9u-Rs-5xl" secondAttribute="bottom" id="4eq-GL-FpV"/>
+                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="top" secondItem="Bvq-cs-V5z" secondAttribute="top" id="5xX-iU-eZv"/>
                             <constraint firstItem="Bvq-cs-V5z" firstAttribute="leading" secondItem="efA-s8-y2l" secondAttribute="leading" id="AHa-td-DGK"/>
-                            <constraint firstItem="efA-s8-y2l" firstAttribute="trailing" secondItem="r9u-Rs-5xl" secondAttribute="trailing" constant="1" id="Dic-9V-hAA"/>
-                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="top" secondItem="efA-s8-y2l" secondAttribute="top" id="GZy-8o-KXy"/>
-                            <constraint firstItem="efA-s8-y2l" firstAttribute="top" secondItem="Bvq-cs-V5z" secondAttribute="top" constant="64" id="Nmr-DT-dzb"/>
-                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="leading" secondItem="efA-s8-y2l" secondAttribute="leading" constant="1" id="SXS-v1-8QK"/>
+                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="width" secondItem="mw9-Et-grZ" secondAttribute="width" id="H5O-2q-Nc4"/>
+                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="centerX" secondItem="efA-s8-y2l" secondAttribute="centerX" id="IJO-Yr-DH1"/>
+                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="height" secondItem="mw9-Et-grZ" secondAttribute="height" priority="250" id="Ijs-8f-JLo"/>
+                            <constraint firstItem="efA-s8-y2l" firstAttribute="top" secondItem="Bvq-cs-V5z" secondAttribute="top" constant="20" id="Nmr-DT-dzb"/>
                             <constraint firstItem="efA-s8-y2l" firstAttribute="trailing" secondItem="Bvq-cs-V5z" secondAttribute="trailing" id="a7W-wp-21L"/>
-                            <constraint firstItem="efA-s8-y2l" firstAttribute="bottom" secondItem="r9u-Rs-5xl" secondAttribute="bottom" id="kaB-lt-g55"/>
+                            <constraint firstItem="Bvq-cs-V5z" firstAttribute="height" secondItem="r9u-Rs-5xl" secondAttribute="height" id="qpN-l0-bEU"/>
+                            <constraint firstItem="r9u-Rs-5xl" firstAttribute="bottom" secondItem="efA-s8-y2l" secondAttribute="bottom" id="r4y-qP-QaY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="efA-s8-y2l"/>
                     </view>
@@ -1196,7 +1322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXl-I4-llK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="1869"/>
+            <point key="canvasLocation" x="647.8125" y="1986.9718309859154"/>
         </scene>
         <!--بلغنا عن المشكلة-->
         <scene sceneID="A15-D0-Kte">
@@ -1313,7 +1439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSM-SZ-otu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="1639"/>
+            <point key="canvasLocation" x="1431" y="1757"/>
         </scene>
         <!--تفاصيل البحث-->
         <scene sceneID="45W-VD-LMg">
@@ -1546,7 +1672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejr-xw-Pmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="970"/>
+            <point key="canvasLocation" x="1909" y="1081"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ef-Fv-9qu">
@@ -1557,6 +1683,10 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="38"/>
+                            <color key="textColor" red="0.46274509803921571" green="0.74509803921568629" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1584,6 +1714,7 @@
         <image name="slider-thumb" width="30" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="BOO-Fs-KXg"/>
         <segue reference="gsw-pt-ySs"/>
     </inferredMetricsTieBreakers>
 </document>

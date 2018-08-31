@@ -30,24 +30,6 @@ class AboutAppController: UIViewController {
     
         webView.isHidden = true
     }
-
-    @IBAction func mbProgressButon(_ sender: Any) {
-        if let url = URL(string: "https://github.com/jdg/MBProgressHUD") {
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
-    
-    @IBAction func islamicNetworkButton(_ sender: Any) {
-        if let url = URL(string: "https://alquran.cloud/terms-and-conditions") {
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
-    
-    @IBAction func tanzilButton(_ sender: Any) {
-        if let url = URL(string: "http://tanzil.net/docs/text_license") {
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
     
     @IBAction func privacyButton(_ sender: Any) {
         loadPage(pageName: "privacy_policy")
